@@ -26,7 +26,7 @@ function Card(props) {
 
     const{description,title,tags} = props
 
-    const [templateName, setTemplateName] = useState("my project");
+    const [templateName, setTemplateName] = useState("my-project");
 
     const [template, settemplate] = useState(title);
 
@@ -42,9 +42,18 @@ function Card(props) {
 
 
        
+    // const onClickGithub = (index) => {
+    //     settemplate(index)
+    //     const gitHubRedirectURL = `https://nowwgo6dd6.execute-api.us-west-2.amazonaws.com/prod/github?data=${template},${templateName},repo`;
+    //     window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=repo`;
+    //   };
+
+          
     const onClickGithub = (index) => {
-        settemplate(index)
-        const gitHubRedirectURL = `https://52zqd4fqic.execute-api.us-west-2.amazonaws.com/prod/github?data=${template},${templateName},repo`;
+        templateN = 'react-base';
+        templatenameN = 'myproject';
+
+        const gitHubRedirectURL = `https://nowwgo6dd6.execute-api.us-west-2.amazonaws.com/prod/github?data=${templateN},${templatenameN},repo`;
         window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=repo`;
       };
 
