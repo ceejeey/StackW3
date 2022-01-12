@@ -2,8 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Card from './Card'
 
-import { useState, useEffect } from "react";
-
+import { useState, } from "react"
 
 import axios from "axios";
 
@@ -27,10 +26,10 @@ function Home() {
             <div className={toggleState === 1 ? style.ActiveContent : style.Content}>
             <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
              when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="react-base" tags={["emotion","react"]}/> 
-            <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            {/* <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
              when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="REACT-EMOTIONS-CSS" tags={["emotion","react"]}/> 
              <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-             when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="REACT-EMOTIONS-CSS" tags={["emotion","react"]}/> 
+             when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="REACT-EMOTIONS-CSS" tags={["emotion","react"]}/>  */}
             </div>
 
 
@@ -38,7 +37,7 @@ function Home() {
 
 
 
-            <div className={toggleState === 2 ? style.ActiveContent : style.Content}>
+            {/* <div className={toggleState === 2 ? style.ActiveContent : style.Content}>
             <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
              when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="Stylng" tags={["emotion","react"]}/> 
             <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -72,7 +71,7 @@ function Home() {
              when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="REACT-EMOTIONS-CSS" tags={["emotion","react"]}/> 
              <Card description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
              when an unknown printer took a galley of type and scrambled it to make a type specimen book." title="REACT-EMOTIONS-CSS" tags={["emotion","react"]}/> 
-            </div>
+            </div> */}
             
         </div>
     )

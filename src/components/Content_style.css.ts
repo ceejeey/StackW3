@@ -130,3 +130,67 @@ export const button = style({
     
 
 });
+
+export const ModalContainer = style({
+    fontFamily: 'poppins',
+    width: '70vw',
+    height:'50vh',
+    position: 'absolute',
+    margin: 'auto',
+    top: '0',
+    left: '0',
+    bottom: '0',
+    right: '0',
+    transition: '16ms',
+    background: 'rgba( 0, 0, 0, 0.25 )',
+    // boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur( 4px )',
+    border: '1px solid rgba( 255, 255, 255, 0.18 )',
+    borderRadius:'10px'
+});
+
+export const ModalHeaderContainer = style({
+    fontFamily: 'poppins',
+    height:'30%',
+    margin: '0 auto',
+    display:'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize:'22px',
+    fontWeight:'500',
+});
+
+export const ModalTextContainer = style({
+    fontFamily: 'poppins',
+    width: '100%',
+    height:'70%',
+    display:'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    
+    flexDirection: 'column'
+});
+
+export const input = style({
+    fontFamily: 'poppins',
+    width: '60%',
+    height: '40px',
+    padding: '10px',
+    background: 'none',
+    border: '1px solid #373837',
+    fontSize:'22px',
+    fontWeight:'500',
+    borderRadius:'10px',
+    color:'#fff'
+});
+
+export const ModalinputContainer = style({
+    display:'flex',
+    justifyContent:'flex-end',
+    width: '90%'
+});
+
+export const buttonlast = style({
+    display:'flex',
+    backgroundColor: "blue"
+});
