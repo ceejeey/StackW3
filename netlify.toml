@@ -1,3 +1,5 @@
-/              /home
-:user/:repo    /success
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
 
