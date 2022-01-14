@@ -33,8 +33,7 @@ const downloadFromAnchor = (resource_link) => {
 };
 
 function Card(props) {
-    
-    
+     
     const{description,title,tags} = props
 
     const [templateName, setTemplateName] = useState("");
@@ -45,22 +44,24 @@ function Card(props) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
    
+    useEffect(() => {
+      settemplate(title);
+    }, [template]);
+    
     const templatetitle = (index) => {
         settemplate(index)
+        console.log(template)
         const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
         downloadFromAnchor(url);
-        
     };
 
     const modalOpen = (index) => {
       settemplate(index) 
       handleOpen()
-      // console.log(template);
     };
 
     const onClickGithub = (index) => {
       settemplate(index)
-
         const gitHubRedirectURL = `https://nowwgo6dd6.execute-api.us-west-2.amazonaws.com/prod/github?data=${template},${templateName},repo`;
         window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=repo`;
       };
