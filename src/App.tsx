@@ -11,7 +11,7 @@ function App() {
 <BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path=":user/:repo" element={<Success />} />
+				<Route path="/:user/:repo" element={<Success />} />
 			</Routes>
 		</BrowserRouter>
   );
