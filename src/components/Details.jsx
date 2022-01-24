@@ -57,7 +57,9 @@ function Details() {
           <span className={style.tag}>Public Template</span>
         </div>
         <div className={style.ActionWrapper}>
-          <ShareIcon className={style.Icon} />
+          <ShareIcon className={style.Icon}>
+            <input type="hidden" value={`https://stactw3protocol.netlify.app/${template}`}></input>
+          </ShareIcon>
           <button className={style.button} onClick={() => templatetitle(template)}>
             Download <DownloadIcon sx={{ fontSize: 16 }} />
           </button>

@@ -3,6 +3,7 @@ import Button from './Button';
 import * as style from './Content_style.css';
 import Tag from './Tag';
 import Modal from '@mui/material/Modal';
+import { Link } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 import ModalContainer from './ModalContainer';
@@ -87,7 +88,9 @@ function Card(props) {
             ))}
           </div>
           <div className={style.ButtonsContainer}>
-            <Button label="More Details" />
+            <Link to={`/:${title}`}>
+              <Button label="More Details" />
+            </Link>
           </div>
         </div>
       </div>
