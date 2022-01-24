@@ -5,12 +5,11 @@ export const Container = style({
   padding: '40px',
   borderRadius: '25px',
   backgroundColor: '#0D0D0D',
-  marginTop: '125px'
-});
-
-export const ErrorContainer = style({
-  height: '100vh',
-  width: '100vw'
+  marginTop: '125px',
+  transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+  ':hover': {
+    transform: 'scale(1.05)'
+  }
 });
 
 export const HeaderContainer = style({
