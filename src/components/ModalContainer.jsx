@@ -6,19 +6,15 @@ import InfoIcon from '@mui/icons-material/Info';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Loading from './Loading';
+import OptionCard from './OptionCard';
 
 const GITHUB_CLIENT_ID = '284633ed1aa09d0f2c16';
 
 function ModalContainer(props) {
   const { setTemplate, title, template } = props;
-
+  const [visibility, setVisibility] = useState('public');
   const [loading, setLoading] = useState();
   const [templateName, setTemplateName] = useState('');
-  const [visibility, setVisibility] = useState('');
-
-  const repovisibility = (value) => {
-    setVisibility(value);
-  };
 
   const onClickGithub = (index) => {
     setLoading(true);
@@ -50,54 +46,25 @@ function ModalContainer(props) {
         </div>
 
         <div className={style.OptionContainer}>
-          <label>
-            <div className={style.VisibilityContainer}>
-              <div className={style.VisibilityWrapper}>
-                <label for="myRadio">Public</label>
-                <label for="myRadio" className={style.Description}>
-                  Anyone on the internet can see this repository. You choose who can commit.
-                </label>
-              </div>
-              <div class="RadioContainer">
-                <input
-                  class="Radio"
-                  type="radio"
-                  id="myRadio"
-                  name="fname"
-                  value="public"
-                  required
-                  onClick={() => repovisibility('public')}
-                ></input>
-                <div className={style.Radio} class="Radio__Radio"></div>
-              </div>
-            </div>
-          </label>
-          <label>
-            <div className={style.VisibilityContainer}>
-              <div className={style.VisibilityWrapper}>
-                <label for="myRadioId">Private</label>
-                <label className={style.Description} for="myRadioId">
-                  You choose who can see and commit to this repository.
-                </label>
-              </div>
-              <div class="RadioContainer">
-                <input
-                  class="Radio"
-                  type="radio"
-                  id="myRadioId"
-                  name="fname"
-                  value="private"
-                  onClick={() => repovisibility('private')}
-                ></input>
-                <div className={style.Radio} class="Radio__Radio"></div>
-              </div>
-            </div>
-          </label>
+          <OptionCard
+            card="public"
+            id="myRadio"
+            setVisibility={setVisibility}
+            visibility={visibility}
+            desc="  Anyone on the internet can see this repository. You choose who can commit."
+          />
+          <OptionCard
+            card="private"
+            id="myRadioId"
+            setVisibility={setVisibility}
+            visibility={visibility}
+            desc=" You choose who can see and commit to this repository."
+          />
         </div>
       </div>
       <div className={style.ModalinputContainer}>
         <div className={style.ButtonContainer}>
-          <button disabled={!templateName && !visibility} className={style.Button} onClick={() => onClickGithub(title)}>
+          <button disabled={!templateName} className={style.Button} onClick={() => onClickGithub(title)}>
             {loading ? <Loading /> : 'Create Repo'}
           </button>
           {/* )} */}

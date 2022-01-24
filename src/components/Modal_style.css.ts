@@ -72,7 +72,7 @@ export const VisibilityContainer = style({
   justifyContent: 'space-between',
   height: '40px',
   padding: '12px',
-  background: '#060606',
+  background: '#0F0F0F',
   borderRadius: '10px',
   alignItems: 'center'
 });

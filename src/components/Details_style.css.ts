@@ -19,6 +19,12 @@ export const Container = style({
   justifyContent: 'space-between'
 });
 
+export const CancelIconWrapper = style({});
+export const CancelIcon = style({
+  float: 'right',
+  color: '#262626'
+});
+
 export const HeaderContainer = style({
   display: 'flex',
   justifyContent: 'space-between',

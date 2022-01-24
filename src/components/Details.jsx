@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as style from './Details_style.css';
 import Modal from '@mui/material/Modal';
+import { Link } from 'react-router-dom';
 
 import ModalContainer from './ModalContainer';
 
 import ShareIcon from '@mui/icons-material/Share';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import CancelIcon from '@mui/icons-material/Cancel';
 import Alert from './Alert';
 
 const downloadFromAnchor = (resource_link) => {
@@ -75,6 +77,11 @@ function Details() {
 
   return (
     <div className={style.Container}>
+      <div className={style.CancelIconWrapper}>
+        <Link to={'/'}>
+          <CancelIcon className={style.CancelIcon} />
+        </Link>
+      </div>
       <div className={style.HeaderContainer}>
         <div className={style.HeaderWrapper}>
           <span className={style.tag}>react-base-ts</span>
@@ -97,6 +104,7 @@ function Details() {
           >
             Clone <GitHubIcon sx={{ fontSize: 16 }} />
           </button>
+
           <Modal
             open={open}
             onClose={handleClose}
