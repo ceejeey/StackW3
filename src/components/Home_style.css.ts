@@ -8,6 +8,15 @@ export const Container = style({
 
 });
 
+export const loadingContainer = style({
+
+    display:"flex",
+    padding: '100px',
+    justifyContent:"center",
+    marginTop: "10%"
+
+});
+
 export const Content = style({
     margin:'auto',
     display:'none',
