@@ -21,13 +21,15 @@ export const Container = style({
 
 export const HeaderContainer = style({
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  alignItems: 'center'
 });
 
 export const HeaderWrapper = style({
   width: '40%',
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  alignItems: 'center'
 });
 
 export const tag = style({
@@ -60,7 +62,8 @@ export const ActionWrapper = style({
 });
 
 export const Icon = style({
-  marginRight: '15px'
+  marginRight: '15px',
+  cursor: 'pointer'
 });
 
 export const button = style({
@@ -75,6 +78,7 @@ export const button = style({
   justifyContent: 'space-evenly',
   alignItems: 'center',
   borderRadius: '4px',
+  cursor: 'pointer',
 
   selectors: {
     '&:nth-child(2n)': {
@@ -84,7 +88,7 @@ export const button = style({
 });
 
 export const DecsriptionContainer = style({
-  width: 716,
+  width: 'calc(100% - 64px)',
   height: 69,
   backgroundColor: '#222',
   borderRadius: '20px',
@@ -98,14 +102,17 @@ export const TagsContainer = style({
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'column',
-  width: 725,
+  width: 'calc(100% - 64px)',
   height: 219,
   backgroundColor: '#222',
   borderRadius: '20px',
-  padding: '40px 30px'
+  padding: '40px 30px',
+  flexWrap: 'wrap'
 });
 export const Tags = style({
   backgroundColor: '#222',
+  height: '30px',
+  width: '250px',
   borderRadius: '20px',
   fontSize: 15,
   fontWeight: 400,

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 import ModalContainer from './ModalContainer';
+import Alert from './Alert';
 
 const downloadFromAnchor = (resource_link) => {
   const link = document.createElement('a');
@@ -27,6 +28,7 @@ function Card(props) {
 
   const [template, setTemplate] = useState('');
 
+  const [alert, setAlert] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -37,9 +39,9 @@ function Card(props) {
 
   const templatetitle = (index) => {
     setTemplate(index);
-    console.log(template);
     const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
     downloadFromAnchor(url);
+    setAlert(true);
   };
 
   const modalOpen = (index) => {
@@ -75,6 +77,7 @@ function Card(props) {
               <div className={style.Iconbackground} onClick={() => templatetitle(title)}>
                 <i class="fas fa-download fa-1x"></i>
               </div>
+              <Alert message={'Download Successful!'} alert={alert} />
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ function ModalContainer(props) {
   return (
     <div className={style.ModalContainer}>
       <div className={style.ModalHeaderContainer}>
-        <span className={style.header}>Add to your github</span>
+        <span className={style.header}>{title}</span>
       </div>
       <div className={style.ModalTextContainer}>
         <input
@@ -44,52 +44,55 @@ function ModalContainer(props) {
         <div className={style.Tooltip}>
           <Tooltip title="Your github repositaory name">
             <IconButton color="primary">
-              <InfoIcon />
+              <InfoIcon sx={{ fontSize: 18 }} />
             </IconButton>
           </Tooltip>
         </div>
 
         <div className={style.OptionContainer}>
-          <div className={style.VisibilityContainer}>
-            <div className={style.VisibilityWrapper}>
-              <label for="myRadio">Public</label>
-              <label for="myRadio" className={style.Description}>
-                Anyone on the internet can see this repository. You choose who can commit.
-              </label>
+          <label>
+            <div className={style.VisibilityContainer}>
+              <div className={style.VisibilityWrapper}>
+                <label for="myRadio">Public</label>
+                <label for="myRadio" className={style.Description}>
+                  Anyone on the internet can see this repository. You choose who can commit.
+                </label>
+              </div>
+              <div class="RadioContainer">
+                <input
+                  class="Radio"
+                  type="radio"
+                  id="myRadio"
+                  name="fname"
+                  value="public"
+                  required
+                  onClick={() => repovisibility('public')}
+                ></input>
+                <div className={style.Radio} class="Radio__Radio"></div>
+              </div>
             </div>
-            <div class="RadioContainer">
-              {' '}
-              <input
-                class="Radio"
-                type="radio"
-                id="myRadio"
-                name="fname"
-                value="public"
-                required
-                onClick={() => repovisibility('public')}
-              ></input>
-              <div className={style.Radio} class="Radio__Radio"></div>
+          </label>
+          <label>
+            <div className={style.VisibilityContainer}>
+              <div className={style.VisibilityWrapper}>
+                <label for="myRadioId">Private</label>
+                <label className={style.Description} for="myRadioId">
+                  You choose who can see and commit to this repository.
+                </label>
+              </div>
+              <div class="RadioContainer">
+                <input
+                  class="Radio"
+                  type="radio"
+                  id="myRadioId"
+                  name="fname"
+                  value="private"
+                  onClick={() => repovisibility('private')}
+                ></input>
+                <div className={style.Radio} class="Radio__Radio"></div>
+              </div>
             </div>
-          </div>
-          <div className={style.VisibilityContainer}>
-            <div className={style.VisibilityWrapper}>
-              <label for="myRadioId">Private</label>
-              <label className={style.Description} for="myRadioId">
-                You choose who can see and commit to this repository.
-              </label>
-            </div>
-            <div class="RadioContainer">
-              <input
-                class="Radio"
-                type="radio"
-                id="myRadioId"
-                name="fname"
-                value="private"
-                onClick={() => repovisibility('private')}
-              ></input>
-              <div className={style.Radio} class="Radio__Radio"></div>
-            </div>
-          </div>
+          </label>
         </div>
       </div>
       <div className={style.ModalinputContainer}>

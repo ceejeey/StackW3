@@ -8,6 +8,7 @@ import ModalContainer from './ModalContainer';
 import ShareIcon from '@mui/icons-material/Share';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Alert from './Alert';
 
 const downloadFromAnchor = (resource_link) => {
   const link = document.createElement('a');
@@ -28,8 +29,11 @@ function Details() {
 
   console.log(template);
 
+  const [text, setText] = useState('');
   const [templateN, setTemplate] = useState('');
   const [open, setOpen] = useState(false);
+  const [alert, setAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -42,11 +46,31 @@ function Details() {
     console.log(template);
     const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
     downloadFromAnchor(url);
+    setAlertType('Download Successful!');
+    successMessage();
   };
 
   const modalOpen = (index) => {
     setTemplate(index);
     handleOpen();
+  };
+
+  const ShareId = (index) => {
+    setText(index);
+    copy();
+    setAlertType('Copied!');
+    successMessage();
+  };
+
+  const successMessage = () => {
+    setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 1000);
+  };
+
+  const copy = async () => {
+    await navigator.clipboard.writeText(text);
   };
 
   return (
@@ -57,9 +81,11 @@ function Details() {
           <span className={style.tag}>Public Template</span>
         </div>
         <div className={style.ActionWrapper}>
-          <ShareIcon className={style.Icon}>
-            <input type="hidden" value={`https://stactw3protocol.netlify.app/${template}`}></input>
-          </ShareIcon>
+          <ShareIcon
+            className={style.Icon}
+            onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
+          ></ShareIcon>
+          <Alert message={alertType} alert={alert} />
           <button className={style.button} onClick={() => templatetitle(template)}>
             Download <DownloadIcon sx={{ fontSize: 16 }} />
           </button>
@@ -88,6 +114,13 @@ function Details() {
       </div>
       <span>Dependencies (23)</span>
       <div className={style.TagsContainer}>
+        <span className={style.Tags}>@types/react </span>
+        <span className={style.Tags}>@types/react-dom </span>
+        <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
+        <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
+        <span className={style.Tags}>vite </span>
+        <span className={style.Tags}>husky </span>
+        <span className={style.Tags}>prettier </span>
         <span className={style.Tags}>@types/react </span>
         <span className={style.Tags}>@types/react-dom </span>
         <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>

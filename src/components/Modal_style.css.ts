@@ -127,8 +127,7 @@ export const LoadingContainer = style({
 
 export const Tooltip = style({
   position: 'absolute',
-  top: 5,
-  bottom: 0,
-  right: 0,
+  top: 7,
+  right: 2,
   height: '40px'
 });

@@ -35,7 +35,8 @@ export const Title = style({
 export const IconContainer = style({
   justifyContent: 'flex-end',
   width: '22%',
-  alignSelf: 'center'
+  alignSelf: 'center',
+  cursor: 'pointer'
 });
 
 export const IconWrap = style({
@@ -106,7 +107,8 @@ export const button = style({
   fontSize: '12px',
   border: 'none',
   color: '#FFFFFF',
-  fontWeight: '400'
+  fontWeight: '400',
+  cursor: 'pointer'
 });
 
 export const ModalErrorHeaderContainer = style({
