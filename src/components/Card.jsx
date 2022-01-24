@@ -88,7 +88,7 @@ function Card(props) {
             ))}
           </div>
           <div className={style.ButtonsContainer}>
-            <Link to={`/:${title}`}>
+            <Link to={`/${title}`}>
               <Button label="More Details" />
             </Link>
           </div>
