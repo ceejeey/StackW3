@@ -1,4 +1,5 @@
 import { autocompleteClasses } from '@mui/material';
+import { textTransform } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
@@ -6,7 +7,6 @@ export const Container = style({
   borderRadius: '25px',
   backgroundColor: '#0D0D0D',
   margin: '20px',
-
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
   ':hover': {
     transform: 'scale(1.03)'
@@ -29,7 +29,8 @@ export const HeaderWrap = style({
 export const Title = style({
   fontSize: '20px',
   fontFamily: 'popppins',
-  fontWeight: '700'
+  fontWeight: '700',
+  textTransform: 'capitalize'
 });
 
 export const IconContainer = style({

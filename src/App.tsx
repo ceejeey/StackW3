@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Error from './pages/Error';
 import Details from './pages/Details';
+import AuthenticationFailed from './pages/AuthenticationFailed';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path=":template" element={<Details />} />
         <Route path="error/:template" element={<Error />} />
         <Route path=":user/:repo" element={<Success />} />
+        <Route path="failed/:repo" element={<AuthenticationFailed />} />
       </Routes>
     </BrowserRouter>
   );

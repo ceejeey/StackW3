@@ -21,16 +21,38 @@ export const SuccessContainer = style({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '20px 40px',
-  background: 'linear-gradient(90deg, rgba(15, 215, 118, 0.2816) 13.02%, rgba(21, 21, 21, 0) 100%)'
+  background: 'linear-gradient(90deg, rgba(15, 215, 118, 0.2816) 13.02%, rgba(21, 21, 21, 0) 100%)',
+  color: '#00E275',
+  fontSize: 16
+});
+
+export const NotSuccessContainer = style({
+  height: 'calc(100% - 40px)',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '20px 40px',
+  background: 'linear-gradient(90deg, rgba(215, 15, 15, 0.2816) 13.02%, rgba(21, 21, 21, 0) 100%)',
+  color: 'rgba(215, 15, 15)',
+  fontSize: 26
 });
 
 export const CheckCircleIcon = style({
-  color: '#00E275',
   height: '32px',
   float: 'left',
   width: '20%',
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  color: 'inherit'
+});
+
+export const CancelCircleIcon = style({
+  height: '32px',
+  width: '60%',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  color: 'inherit'
 });
 
 export const HeaderContainer = style({
@@ -39,13 +61,13 @@ export const HeaderContainer = style({
   width: '70%',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  fontFamily: 'poppins'
+  fontFamily: 'poppins',
+  color: 'inherit'
 });
 
 export const title = style({
-  fontSize: 16,
   fontWeight: 700,
-  color: '#00E275'
+  color: 'inherit'
 });
 
 export const Description = style({
