@@ -10,7 +10,7 @@ export const Container = style({
   left: '0',
   bottom: '0',
   right: '0',
-  background: '#151515',
+  background: '#0D0D0D',
   borderRadius: '5px',
   border: '1px solid #242424',
   padding: '30px',
@@ -19,7 +19,11 @@ export const Container = style({
   justifyContent: 'space-between'
 });
 
-export const CancelIconWrapper = style({});
+export const CancelIconWrapper = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+});
 export const CancelIcon = style({
   float: 'right',
   color: '#262626'
@@ -27,12 +31,12 @@ export const CancelIcon = style({
 
 export const HeaderContainer = style({
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   alignItems: 'center'
 });
 
 export const HeaderWrapper = style({
-  width: '40%',
+  width: '36%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center'
@@ -61,14 +65,13 @@ export const tag = style({
 });
 
 export const ActionWrapper = style({
-  width: '37%',
+  width: '35%',
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'space-evenly',
   alignItems: 'center'
 });
 
 export const Icon = style({
-  marginRight: '15px',
   cursor: 'pointer'
 });
 
@@ -96,12 +99,23 @@ export const button = style({
 export const DecsriptionContainer = style({
   width: 'calc(100% - 64px)',
   height: 69,
-  backgroundColor: '#222',
+  backgroundColor: '#262626',
   borderRadius: '20px',
   padding: 32,
   fontSize: 16,
   fontWeight: 400,
-  color: '#8d8d8d'
+  color: '#8d8d8d',
+  overflowX: 'auto',
+
+  selectors: {
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    }
+  }
+});
+
+export const DecsriptionHeader = style({
+  fontWeight: 700
 });
 
 export const TagsContainer = style({
@@ -110,13 +124,19 @@ export const TagsContainer = style({
   flexDirection: 'column',
   width: 'calc(100% - 64px)',
   height: 219,
-  backgroundColor: '#222',
+  backgroundColor: '#262626',
   borderRadius: '20px',
   padding: '40px 30px',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  overflowY: 'auto',
+
+  selectors: {
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    }
+  }
 });
 export const Tags = style({
-  backgroundColor: '#222',
   height: '30px',
   width: '250px',
   borderRadius: '20px',

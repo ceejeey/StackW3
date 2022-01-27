@@ -5,10 +5,11 @@ export const Container = style({
   padding: '40px',
   borderRadius: '25px',
   backgroundColor: '#0D0D0D',
-  marginTop: '125px',
+  margin: '20px',
+
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
   ':hover': {
-    transform: 'scale(1.05)'
+    transform: 'scale(1.03)'
   }
 });
 
@@ -21,7 +22,7 @@ export const HeaderContainer = style({
 });
 
 export const HeaderWrap = style({
-  width: '78%',
+  width: '70%',
   margin: 'auto'
 });
 
@@ -33,7 +34,7 @@ export const Title = style({
 
 export const IconContainer = style({
   justifyContent: 'flex-end',
-  width: '22%',
+  width: '30%',
   alignSelf: 'center',
   cursor: 'pointer'
 });
@@ -53,7 +54,18 @@ export const Iconbackground = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: '16px'
+  fontSize: '16px',
+  color: '#b3b1b1',
+  transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+  ':hover': {
+    transform: 'scale(1.06)',
+    color: '#fff'
+  }
+});
+
+export const IconSandBox = style({
+  height: '20px',
+  width: '20px'
 });
 
 export const Para = style({
@@ -86,7 +98,8 @@ export const Tag = style({
   color: '#FFFFFF',
   fontFamily: 'poppins',
   fontSize: '9.8px',
-  fontWeight: '400'
+  fontWeight: '400',
+  cursor: 'pointer'
 });
 
 export const ButtonsContainer = style({

@@ -17,6 +17,7 @@ function Alert(props) {
       return;
     }
   };
+
   return (
     <div>
       <Snackbar open={alert} autoHideDuration={100} onClose={handleCloseAlert}>

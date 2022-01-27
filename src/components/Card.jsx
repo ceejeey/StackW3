@@ -4,100 +4,104 @@ import * as style from './Content_style.css';
 import Tag from './Tag';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+
 import ModalContainer from './ModalContainer';
-import Alert from './Alert';
+import DownloadIcon from '@mui/icons-material/Download';
 
-const downloadFromAnchor = (resource_link) => {
-  const link = document.createElement('a');
-  link.href = resource_link;
-
-  // Append to html link element page
-  document.body.appendChild(link);
-
-  // Start download
-  link.click();
-
-  // Clean up and remove the link
-  link.parentNode.removeChild(link);
-};
+import GitHubIcon from '@mui/icons-material/GitHub';
+import Tooltip from '@mui/material/Tooltip';
+import useDownloadTemplate from '../hooks/useDownloadTemplate';
+import codesandbox_icon from '../components/Assets/Sandbox.svg';
+import ActionButton from './ActionButton';
 
 function Card(props) {
-  const { description, title, tags } = props;
+  const { description, title, tags, setAlert, variants } = props;
+  const { downloadFromAnchorHandler } = useDownloadTemplate();
 
   const [template, setTemplate] = useState('');
-
-  const [alert, setAlert] = useState(false);
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   useEffect(() => {
     setTemplate(title);
   }, [template]);
 
-  const templatetitle = (index) => {
-    setTemplate(index);
+  const downloadTitleHandler = (value) => {
+    setTemplate(value);
     const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
-    downloadFromAnchor(url);
+    downloadFromAnchorHandler(url);
     setAlert(true);
   };
 
-  const modalOpen = (index) => {
-    setTemplate(index);
-    handleOpen();
+  const modalOpen = (value) => {
+    setTemplate(value);
+    setOpen(true);
   };
 
   return (
-    <>
-      <div className={style.Container}>
-        <div className={style.HeaderContainer}>
-          <div className={style.HeaderWrap}>
-            <span className={style.Title}>{title}</span>
-          </div>
-          <div className={style.IconContainer}>
-            <div className={style.IconWrap}>
-              <div
-                className={style.Iconbackground}
-                onClick={() => {
-                  modalOpen(title);
-                }}
-              >
-                <i class="fab fa-github fa-1x"></i>
-              </div>
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <ModalContainer setTemplate={setTemplate} template={template} title={title} />
-              </Modal>
-              <div className={style.Iconbackground} onClick={() => templatetitle(title)}>
-                <i class="fas fa-download fa-1x"></i>
-              </div>
-              <Alert message={'Download Successful!'} alert={alert} />
+    <motion.div className={style.Container} variants={variants}>
+      <div className={style.HeaderContainer}>
+        <div className={style.HeaderWrap}>
+          <span className={style.Title}>{title}</span>
+        </div>
+        <div className={style.IconContainer}>
+          <div className={style.IconWrap}>
+            <div className={style.Iconbackground}>
+              <Tooltip title="This will be your github repositaory name">
+                <span
+                  className={style.IconSandBox}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+                  }}
+                >
+                  <img src={codesandbox_icon} alt="HOME" />
+                </span>
+              </Tooltip>
             </div>
-          </div>
-        </div>
-        <div className={style.Para}>
-          <span>{description}</span>
-        </div>
-        <div className={style.Action}>
-          <div className={style.Tags}>
-            {tags.map((tag) => (
-              <Tag label={tag} />
-            ))}
-          </div>
-          <div className={style.ButtonsContainer}>
-            <Link to={`/${title}`}>
-              <Button label="More Details" />
-            </Link>
+            <ActionButton
+              icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+              dataHandler={modalOpen}
+              template={title}
+              buttonName=""
+              button="CardBtn"
+            />
+            <ActionButton
+              icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+              dataHandler={downloadTitleHandler}
+              template={title}
+              buttonName=""
+              button="CardBtn"
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <ModalContainer template={template} modal="modal" />
+            </Modal>
           </div>
         </div>
       </div>
-    </>
+      <div className={style.Para}>
+        <span>{description}</span>
+      </div>
+      <div className={style.Action}>
+        <div className={style.Tags}>
+          {tags.map((tag) => (
+            <Tag key={tag} label={tag} />
+          ))}
+        </div>
+        <div className={style.ButtonsContainer}>
+          <Link to={`/${title}`}>
+            <Button label="More Details" />
+          </Link>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 

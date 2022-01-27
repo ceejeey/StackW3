@@ -1,12 +1,12 @@
 // import Home from "./Pages/Dashboard";
 import './App.css';
-import Home from './components/Home';
-import Success from './components/Success';
+import Home from './pages/Home';
+import Success from './pages/Success';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import React from 'react';
-import Error from './components/Error';
-import Details from './components/Details';
+import Error from './pages/Error';
+import Details from './pages/Details';
 
 function App() {
   return (

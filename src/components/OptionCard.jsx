@@ -17,7 +17,7 @@ function OptionCard(props) {
           style={{ backgroundColor: visibility === card ? '#060606' : '#0F0F0F' }}
         >
           <div className={style.VisibilityWrapper}>
-            <label for={id}>{card}</label>
+            {card}
             <label for={id} className={style.Description}>
               {desc}
             </label>

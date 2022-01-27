@@ -78,6 +78,7 @@ export const Button = style({
   color: '#fff',
   fontSize: 11,
   fontWeight: 300,
+  cursor: 'pointer',
 
   selectors: {
     '&:nth-child(2n)': {

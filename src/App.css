@@ -18,6 +18,7 @@ body {
 .RadioContainer {
   width: 1em;
   height: 1em;
+  cursor: pointer;
   
 }
 

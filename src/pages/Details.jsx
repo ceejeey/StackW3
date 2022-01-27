@@ -3,31 +3,22 @@ import { useParams } from 'react-router';
 import * as style from './Details_style.css';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
+import useDownloadTemplate from '../hooks/useDownloadTemplate';
 
-import ModalContainer from './ModalContainer';
+import ModalContainer from '../components/ModalContainer';
+import ActionButton from '../components/ActionButton';
 
-import ShareIcon from '@mui/icons-material/Share';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ShareIcon from '@mui/icons-material/Share';
 import CancelIcon from '@mui/icons-material/Cancel';
-import Alert from './Alert';
-
-const downloadFromAnchor = (resource_link) => {
-  const link = document.createElement('a');
-  link.href = resource_link;
-
-  // Append to html link element page
-  document.body.appendChild(link);
-
-  // Start download
-  link.click();
-
-  // Clean up and remove the link
-  link.parentNode.removeChild(link);
-};
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import Alert from '../components/Alert';
 
 function Details() {
   const { template } = useParams();
+  const { downloadFromAnchorHandler } = useDownloadTemplate();
 
   console.log(template);
 
@@ -45,9 +36,8 @@ function Details() {
 
   const templatetitle = (index) => {
     setTemplate(index);
-    console.log(template);
     const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
-    downloadFromAnchor(url);
+    downloadFromAnchorHandler(url);
     setAlertType('Download Successful!');
     successMessage();
   };
@@ -78,32 +68,39 @@ function Details() {
   return (
     <div className={style.Container}>
       <div className={style.CancelIconWrapper}>
-        <Link to={'/'}>
-          <CancelIcon className={style.CancelIcon} />
-        </Link>
-      </div>
-      <div className={style.HeaderContainer}>
         <div className={style.HeaderWrapper}>
           <span className={style.tag}>react-base-ts</span>
           <span className={style.tag}>Public Template</span>
         </div>
+        <IconButton color="error" size="large">
+          <Link to={'/'}>
+            <CancelIcon className={style.CancelIcon} sx={{ fontSize: 32 }} />
+          </Link>
+        </IconButton>
+      </div>
+      <div className={style.HeaderContainer}>
         <div className={style.ActionWrapper}>
-          <ShareIcon
-            className={style.Icon}
-            onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
-          ></ShareIcon>
+          <IconButton color="primary" size="large">
+            <ShareIcon
+              className={style.Icon}
+              onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
+            ></ShareIcon>{' '}
+          </IconButton>
           <Alert message={alertType} alert={alert} />
-          <button className={style.button} onClick={() => templatetitle(template)}>
-            Download <DownloadIcon sx={{ fontSize: 16 }} />
-          </button>
-          <button
-            className={style.button}
-            onClick={() => {
-              modalOpen(template);
-            }}
-          >
-            Clone <GitHubIcon sx={{ fontSize: 16 }} />
-          </button>
+          <ActionButton
+            icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+            dataHandler={templatetitle}
+            template={template}
+            buttonName="Download"
+            button="DetailsBtn"
+          />
+          <ActionButton
+            icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+            dataHandler={modalOpen}
+            template={template}
+            buttonName="Clone"
+            button="DetailsBtn"
+          />
 
           <Modal
             open={open}
@@ -111,7 +108,7 @@ function Details() {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <ModalContainer title={template} setTemplate={setTemplate} template={template} />
+            <ModalContainer modal="modal" template={template} />
           </Modal>
         </div>
       </div>
@@ -120,7 +117,7 @@ function Details() {
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book.
       </div>
-      <span>Dependencies (23)</span>
+      <span className={style.DecsriptionHeader}>Dependencies (23)</span>
       <div className={style.TagsContainer}>
         <span className={style.Tags}>@types/react </span>
         <span className={style.Tags}>@types/react-dom </span>
