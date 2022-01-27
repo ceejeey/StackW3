@@ -1,10 +1,16 @@
+import { autocompleteClasses } from '@mui/material';
 import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
   fontFamily: 'poppins',
-  width: '100vw',
-  height: '100vh',
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+  margin: 'auto',
+  width: '603px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
@@ -13,9 +19,7 @@ export const Container = style({
 export const ModalContainer = style({
   fontFamily: 'poppins',
   width: '603px',
-  // height: '561px',
   margin: 'auto',
-
   background: '#151515',
   backdropFilter: 'blur( 4px )',
   border: '1px solid #242424',

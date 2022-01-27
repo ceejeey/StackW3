@@ -12,7 +12,7 @@ import OptionCard from './OptionCard';
 const GITHUB_CLIENT_ID = '284633ed1aa09d0f2c16';
 
 function ModalContainer(props) {
-  const { template, modal } = props;
+  const { template, modal, handlerModalClose } = props;
   const [visibility, setVisibility] = useState('public');
   const [loading, setLoading] = useState();
   const [templateName, setTemplateName] = useState('');
@@ -24,7 +24,7 @@ function ModalContainer(props) {
   };
 
   return (
-    <div className={style.Container}>
+    <div className={style.Container} onClick={handlerModalClose}>
       <div className={style.ModalContainer}>
         <div className={style.ModalHeaderContainer}>
           <span className={style.header}>{template}</span>
@@ -76,7 +76,7 @@ function ModalContainer(props) {
           </div>
           <div className={style.ModalinputContainer}>
             <div className={style.ButtonContainer}>
-              <button disabled={!templateName} className={style.Button} onClick={() => onClickGithub(title)}>
+              <button disabled={!templateName} className={style.Button} onClick={() => onClickGithub(template)}>
                 {loading ? <Loading /> : 'Create Repo'}
               </button>
             </div>
