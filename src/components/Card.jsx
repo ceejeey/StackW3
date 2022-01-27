@@ -81,7 +81,7 @@ function Card(props) {
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
             >
-              <ModalContainer template={template} modal="modal" />
+              <ModalContainer template={template} modal="modal" handlerModalClose={handleClose} />
             </Modal>
           </div>
         </div>

@@ -8,8 +8,10 @@ export const Container = style({
   backgroundColor: '#0D0D0D',
   margin: '20px',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+  transform: 'scale(1)',
   ':hover': {
-    transform: 'scale(1.03)'
+    transform: 'scale(1.06)',
+    color: '#fff'
   }
 });
 

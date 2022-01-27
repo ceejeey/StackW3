@@ -13,7 +13,7 @@ export const loadingContainer = style({
 
 export const Content = style({
   margin: 'auto',
-  //   display: 'none',
+  display: 'none',
   justifyContent: 'space-between',
   flexWrap: 'wrap',
   alignContent: 'flexstart',
@@ -25,6 +25,5 @@ export const ActiveContent = style({
   display: 'flex',
   justifyContent: 'space-between',
   flexWrap: 'wrap',
-  alignContent: 'flexstart',
   width: '1212px'
 });
