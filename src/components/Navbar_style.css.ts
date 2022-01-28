@@ -28,7 +28,7 @@ export const Navlink = style({
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
 
   ':hover': {
-    backgroundColor: '#1b1b1c',
+    // backgroundColor: '#111112',
     transform: 'scale(1.05)'
   }
 });
@@ -41,5 +41,6 @@ export const ActiveNavlink = style({
   fontSize: '14px',
   cursor: 'pointer',
   justifyContent: 'center',
-  borderRadius: '5px'
+  borderRadius: '5px',
+  transform: 'scale(1.1)'
 });
