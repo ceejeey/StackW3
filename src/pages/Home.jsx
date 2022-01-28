@@ -48,8 +48,47 @@ function Home() {
         "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       title: 'react-base-testing-library-apollo',
       tags: ['emotion', 'react']
+    },
+    {
+      id: 1,
+      description:
+        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      title: 'react-base',
+      tags: ['react']
     }
   ];
+
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 500
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1.2
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: 50,
+      transition: {
+        ease: 'easiInOut',
+        duration: 0.8
+      }
+    }
+  };
 
   return (
     <>
