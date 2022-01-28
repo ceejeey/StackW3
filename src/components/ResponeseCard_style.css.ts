@@ -1,3 +1,4 @@
+import { autocompleteClasses } from '@mui/material';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
@@ -29,8 +30,8 @@ export const SuccessContainer = style({
 export const NotSuccessContainer = style({
   height: 'calc(100% - 40px)',
   display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  flexDirection: 'column',
   padding: '20px 40px',
   background: 'linear-gradient(90deg, rgba(215, 15, 15, 0.2816) 13.02%, rgba(21, 21, 21, 0) 100%)',
   color: 'rgba(215, 15, 15)',
@@ -47,8 +48,9 @@ export const CheckCircleIcon = style({
 });
 
 export const CancelCircleIcon = style({
-  height: '32px',
-  width: '60%',
+  height: '70%',
+  width: '50%',
+  margin: 'auto',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -93,7 +95,7 @@ export const Button = style({
   width: 140,
   fontFamily: 'poppins',
   height: 45,
-  backgroundColor: 'transparent',
+  backgroundColor: '#151515',
   border: 'none',
   margin: '5px',
   borderRadius: '8px',

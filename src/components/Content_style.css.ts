@@ -4,13 +4,15 @@ import { style } from '@vanilla-extract/css';
 
 export const Container = style({
   padding: '40px',
-  borderRadius: '25px',
-  backgroundColor: '#0D0D0D',
-  margin: '20px',
+  borderRadius: '20px',
+  height: 210,
+  width: 467,
+  backgroundColor: '#141414',
+  marginTop: '140px',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
-  transform: 'scale(1)',
+
   ':hover': {
-    transform: 'scale(1.06)!important',
+    transform: 'scale(1.03)!important',
     color: '#fff'
   }
 });
@@ -30,7 +32,6 @@ export const HeaderWrap = style({
 
 export const Title = style({
   fontSize: '20px',
-  fontFamily: 'popppins',
   fontWeight: '700',
   textTransform: 'capitalize'
 });
@@ -77,8 +78,7 @@ export const Para = style({
   fontSize: '12px',
   color: '#A3A3A3',
   lineHeight: '21.78px',
-  letterSpacing: '.5px',
-  fontFamily: 'poppins'
+  letterSpacing: '.5px'
 });
 
 export const Action = style({
@@ -99,7 +99,6 @@ export const Tag = style({
   textAlign: 'center',
   backgroundColor: '#363638',
   color: '#FFFFFF',
-  fontFamily: 'poppins',
   fontSize: '9.8px',
   fontWeight: '400',
   cursor: 'pointer'
@@ -112,7 +111,6 @@ export const ButtonsContainer = style({
 });
 
 export const button = style({
-  fontFamily: 'poppins',
   width: '116px',
   height: '43px',
   borderRadius: '8.78px',
@@ -127,7 +125,6 @@ export const button = style({
 });
 
 export const ModalErrorHeaderContainer = style({
-  fontFamily: 'poppins',
   margin: '0 auto',
   display: 'flex',
   justifyContent: 'center',

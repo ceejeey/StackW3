@@ -1,12 +1,12 @@
 import { style } from '@vanilla-extract/css';
 
 export const HomeContainer = style({
-  padding: '100px'
+  padding: '10px'
 });
 
 export const loadingContainer = style({
   display: 'flex',
-  padding: '100px',
+  padding: '10px',
   justifyContent: 'center',
   marginTop: '10%'
 });
@@ -14,16 +14,16 @@ export const loadingContainer = style({
 export const Content = style({
   margin: 'auto',
   display: 'none',
-  justifyContent: 'space-between',
+  justifyContent: 'space-evenly',
   flexWrap: 'wrap',
   alignContent: 'flexstart',
-  width: '1212px'
+  width: '100%'
 });
 
 export const ActiveContent = style({
   margin: 'auto',
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'space-evenly',
   flexWrap: 'wrap',
-  width: '1212px'
+  width: '100%'
 });

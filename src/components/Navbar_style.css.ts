@@ -7,7 +7,8 @@ export const AppHeader = style({
 });
 
 export const Navmenu = style({
-  width: '100%',
+  width: '40%',
+
   display: 'flex',
   justifyContent: 'space-evenly',
   height: '100%',
@@ -16,15 +17,14 @@ export const Navmenu = style({
 });
 
 export const Navlink = style({
+  marginTop: '100px',
   display: 'flex',
   padding: '10px',
-  width: '8rem',
   backgroundColor: '#000',
   fontSize: '14px',
   cursor: 'pointer',
   justifyContent: 'center',
   borderRadius: '5px',
-  fontFamily: 'poppins',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
 
   ':hover': {
@@ -34,13 +34,12 @@ export const Navlink = style({
 });
 
 export const ActiveNavlink = style({
+  marginTop: '100px',
   display: 'flex',
   padding: '10px',
-  width: '8rem',
   backgroundColor: '#1b1b1c',
   fontSize: '14px',
   cursor: 'pointer',
   justifyContent: 'center',
-  borderRadius: '5px',
-  fontFamily: 'poppins'
+  borderRadius: '5px'
 });

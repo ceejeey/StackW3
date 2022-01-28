@@ -40,6 +40,11 @@ function ResponeseCard(props) {
             {icon}
             {title}
           </div>
+          <div className={style.buttonConatiner}>
+            <button className={style.Button} onClick={() => navigate('/')}>
+              Cancel
+            </button>{' '}
+          </div>
         </div>
       )}
     </div>
