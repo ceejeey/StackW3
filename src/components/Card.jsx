@@ -49,7 +49,7 @@ function Card(props) {
         <div className={style.IconContainer}>
           <div className={style.IconWrap}>
             <div className={style.Iconbackground}>
-              <Tooltip title="This will be your github repositaory name">
+              <Tooltip title="This will be your github repositaory name" placement="top-start">
                 <span
                   className={style.IconSandBox}
                   onClick={(e) => {
