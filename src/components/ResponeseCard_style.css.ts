@@ -2,7 +2,6 @@ import { autocompleteClasses } from '@mui/material';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  fontFamily: 'poppins',
   width: '603px',
   height: '244px',
   position: 'absolute',
@@ -63,7 +62,6 @@ export const HeaderContainer = style({
   width: '70%',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  fontFamily: 'poppins',
   color: 'inherit'
 });
 
@@ -93,7 +91,6 @@ export const buttonConatiner = style({
 
 export const Button = style({
   width: 140,
-  fontFamily: 'poppins',
   height: 45,
   backgroundColor: '#151515',
   border: 'none',

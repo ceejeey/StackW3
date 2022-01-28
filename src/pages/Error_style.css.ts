@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
 export const ModalContainer = style({
-  fontFamily: 'poppins',
   width: '603px',
   height: '561px',
   position: 'absolute',
@@ -53,8 +52,7 @@ export const HeaderContainer = style({
   height: '75%',
   width: '70%',
   flexDirection: 'column',
-  justifyContent: 'space-between',
-  fontFamily: 'poppins'
+  justifyContent: 'space-between'
 });
 
 export const title = style({
@@ -82,7 +80,6 @@ export const ModalTextContainer = style({
 });
 
 export const input = style({
-  fontFamily: 'poppins',
   height: '30px',
   padding: '10px',
   background: '#222222',
@@ -142,7 +139,6 @@ export const ModalinputContainer = style({
 export const ButtonContainer = style({});
 
 export const Button = style({
-  fontFamily: 'poppins',
   width: '140px',
   height: '45px',
   borderRadius: '8.65px',

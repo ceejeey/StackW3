@@ -29,7 +29,7 @@ export const Navlink = style({
 
   ':hover': {
     // backgroundColor: '#111112',
-    transform: 'scale(1.05)'
+    transform: 'scale(1.05)!important'
   }
 });
 

@@ -3,7 +3,6 @@ import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  fontFamily: 'poppins',
   position: 'absolute',
   top: 0,
   bottom: 0,
@@ -17,7 +16,6 @@ export const Container = style({
 });
 
 export const ModalContainer = style({
-  fontFamily: 'poppins',
   width: '603px',
   margin: 'auto',
   background: '#151515',
@@ -68,8 +66,7 @@ export const HeaderContainer = style({
   height: '75%',
   width: '70%',
   flexDirection: 'column',
-  justifyContent: 'space-between',
-  fontFamily: 'poppins'
+  justifyContent: 'space-between'
 });
 
 export const title = style({
@@ -95,7 +92,6 @@ export const ModalTextContainer = style({
 });
 
 export const input = style({
-  fontFamily: 'poppins',
   height: '30px',
   padding: '10px',
   background: '#222222',
@@ -157,7 +153,6 @@ export const ModalinputContainer = style({
 export const ButtonContainer = style({});
 
 export const Button = style({
-  fontFamily: 'poppins',
   width: '140px',
   height: '45px',
   borderRadius: '8.65px',

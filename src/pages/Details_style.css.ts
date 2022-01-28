@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  fontFamily: 'poppins',
   width: '873px',
   height: '603px',
   position: 'absolute',
@@ -43,7 +42,6 @@ export const HeaderWrapper = style({
 });
 
 export const tag = style({
-  fontFamily: 'poppins',
   color: '#fff',
   fontSize: 22,
   fontWeight: 500,
