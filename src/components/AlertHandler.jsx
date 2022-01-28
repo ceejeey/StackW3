@@ -14,6 +14,7 @@ function AlertHandler(props) {
 
   const handleCloseAlert = () => {
     {
+      setAlert(false);
       return;
     }
   };
