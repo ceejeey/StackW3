@@ -67,6 +67,7 @@ function Card(props) {
               template={title}
               buttonName=""
               button="CardBtn"
+              tooltipStatus="Click to Download"
             />
             <ActionButton
               icon={<DownloadIcon sx={{ fontSize: 16 }} />}
@@ -74,6 +75,7 @@ function Card(props) {
               template={title}
               buttonName=""
               button="CardBtn"
+              tooltipStatus="Clone to Your Github"
             />
             <Modal
               open={open}

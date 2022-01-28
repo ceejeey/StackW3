@@ -24,7 +24,7 @@ function ModalContainer(props) {
   };
 
   return (
-    <div className={style.Container} onClick={handlerModalClose}>
+    <div className={style.Container}>
       <div className={style.ModalContainer}>
         <div className={style.ModalHeaderContainer}>
           <span className={style.header}>{template}</span>

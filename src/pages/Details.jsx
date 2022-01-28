@@ -80,26 +80,32 @@ function Details() {
       </div>
       <div className={style.HeaderContainer}>
         <div className={style.ActionWrapper}>
-          <IconButton color="primary" size="large">
-            <ShareIcon
-              className={style.Icon}
-              onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
-            ></ShareIcon>{' '}
-          </IconButton>
+          <Tooltip title="Share" placement="top-start">
+            <IconButton color="primary" size="large">
+              <ShareIcon
+                className={style.Icon}
+                onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
+              ></ShareIcon>
+            </IconButton>
+          </Tooltip>
           <Alert message={alertType} alert={alert} />
+
           <ActionButton
             icon={<DownloadIcon sx={{ fontSize: 16 }} />}
             dataHandler={templatetitle}
             template={template}
             buttonName="Download"
             button="DetailsBtn"
+            tooltipStatus="Click to Download"
           />
+
           <ActionButton
             icon={<GitHubIcon sx={{ fontSize: 16 }} />}
             dataHandler={modalOpen}
             template={template}
             buttonName="Clone"
             button="DetailsBtn"
+            tooltipStatus="Clone to Your Github"
           />
 
           <Modal

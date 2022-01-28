@@ -28,6 +28,7 @@ export const Iconbackground = style({
   fontSize: '16px',
   color: '#b3b1b1',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+  cursor: 'pointer',
   ':hover': {
     transform: 'scale(1.06)',
     color: '#fff'
