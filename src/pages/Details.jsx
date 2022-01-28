@@ -14,7 +14,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import Alert from '../components/Alert';
+import AlertHandler from '../components/AlertHandler';
 
 function Details() {
   const { template } = useParams();
@@ -88,7 +88,7 @@ function Details() {
               ></ShareIcon>
             </IconButton>
           </Tooltip>
-          <Alert message={alertType} alert={alert} />
+          <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
 
           <ActionButton
             icon={<DownloadIcon sx={{ fontSize: 16 }} />}

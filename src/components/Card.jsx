@@ -49,7 +49,7 @@ function Card(props) {
         <div className={style.IconContainer}>
           <div className={style.IconWrap}>
             <div className={style.Iconbackground}>
-              <Tooltip title="This will be your github repositaory name" placement="top-start">
+              <Tooltip title="Edit code In Codesandbox" placement="top-start">
                 <span
                   className={style.IconSandBox}
                   onClick={(e) => {
@@ -67,7 +67,7 @@ function Card(props) {
               template={title}
               buttonName=""
               button="CardBtn"
-              tooltipStatus="Click to Download"
+              tooltipStatus="Clone to Your Github"
             />
             <ActionButton
               icon={<DownloadIcon sx={{ fontSize: 16 }} />}
@@ -75,7 +75,7 @@ function Card(props) {
               template={title}
               buttonName=""
               button="CardBtn"
-              tooltipStatus="Clone to Your Github"
+              tooltipStatus="Click to download"
             />
             <Modal
               open={open}

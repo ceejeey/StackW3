@@ -10,7 +10,7 @@ export const Container = style({
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
   transform: 'scale(1)',
   ':hover': {
-    transform: 'scale(1.06)',
+    transform: 'scale(1.06)!important',
     color: '#fff'
   }
 });

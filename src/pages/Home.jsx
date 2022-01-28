@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
-import Alert from '../components/Alert';
+import AlertHandler from '../components/AlertHandler';
 import { motion } from 'framer-motion';
 
 import { useState, useEffect } from 'react';
@@ -73,7 +73,7 @@ function Home() {
     <>
       <div className={style.HomeContainer}>
         <Navbar setToggleState={setToggleState} toggleState={toggleState} />
-        <Alert message={'Download Successful!'} alert={alert} />
+        <AlertHandler message={'Download Successful!'} alert={alert} setAlert={setAlert} />
         <motion.div
           className={toggleState === 1 ? style.ActiveContent : style.Content}
           variants={container}
