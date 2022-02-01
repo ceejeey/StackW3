@@ -7,7 +7,7 @@ export const Container = style({
       height: '603px'
     }
   },
-  width: '100%',
+  width: 'calc(100% - 60px)',
   height: '603px',
   position: 'absolute',
   margin: 'auto',
@@ -54,8 +54,15 @@ export const HeaderWrapper = style({
 
 export const tag = style({
   color: '#fff',
-  fontSize: 22,
+  fontSize: 16,
   fontWeight: 500,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '873px',
+      height: '603px',
+      fontSize: 22
+    }
+  },
 
   selectors: {
     '&:nth-child(2n)': {
@@ -119,25 +126,27 @@ export const Icon = style({
 
 export const DecsriptionContainer = style({
   width: 'calc(100% - 64px)',
-  height: 69,
+  height: 89,
   backgroundColor: '#262626',
   borderRadius: '20px',
-  padding: 32,
+  padding: '10px 32px',
+  color: '#8d8d8d'
+});
+
+export const Decsription = style({
+  width: '100%',
+  height: '100%',
+
+  fontSize: 16,
+  fontWeight: 400,
   overflowX: 'auto',
+  resize: 'none',
 
   selectors: {
     '&::-webkit-scrollbar': {
       display: 'none'
     }
   }
-});
-
-export const Decsription = style({
-  fontSize: 16,
-  height: 200,
-  fontWeight: 400,
-  color: '#8d8d8d',
-  overflow: 'hidden'
 });
 
 export const DecsriptionHeader = style({

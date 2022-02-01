@@ -119,9 +119,11 @@ function Details() {
         </div>
       </div>
       <div className={style.DecsriptionContainer}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
+        <div className={style.Decsription}>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book.
+        </div>
       </div>
       <span className={style.DecsriptionHeader}>Dependencies (23)</span>
       <div className={style.TagsContainer}>

@@ -2,7 +2,13 @@ import { autocompleteClasses } from '@mui/material';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  width: '603px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '603px',
+      height: '244px'
+    }
+  },
+  width: '100%',
   height: '244px',
   position: 'absolute',
   margin: 'auto',
@@ -10,12 +16,19 @@ export const Container = style({
   left: '0',
   bottom: '0',
   right: '0',
-  background: '##151515',
+  background: '#151515',
   border: '1px solid #242424',
   borderRadius: '5px'
 });
 
 export const SuccessContainer = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '100%',
+      height: 'calc(50% - 40px)'
+    }
+  },
+  width: 'calc(100% - 80px)',
   height: 'calc(50% - 40px)',
   display: 'flex',
   justifyContent: 'center',
@@ -28,6 +41,7 @@ export const SuccessContainer = style({
 
 export const NotSuccessContainer = style({
   height: 'calc(100% - 40px)',
+  width: '100%',
   display: 'flex',
   justifyContent: 'space-evenly',
   flexDirection: 'column',
@@ -71,7 +85,13 @@ export const title = style({
 });
 
 export const Description = style({
-  width: 370,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: 370,
+      height: 32
+    }
+  },
+  width: '90%',
   height: 32,
   fontSize: 12,
   fontWeight: 300,
@@ -90,14 +110,21 @@ export const buttonConatiner = style({
 });
 
 export const Button = style({
-  width: 140,
-  height: 45,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: 140,
+      height: 45,
+      fontSize: 11
+    }
+  },
+  width: 100,
+  height: 35,
   backgroundColor: '#151515',
   border: 'none',
   margin: '5px',
   borderRadius: '8px',
   color: '#fff',
-  fontSize: 11,
+  fontSize: 10,
   fontWeight: 300,
   cursor: 'pointer',
 
