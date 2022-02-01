@@ -8,7 +8,6 @@ export const AppHeader = style({
 
 export const Navmenu = style({
   width: '40%',
-
   display: 'flex',
   justifyContent: 'space-evenly',
   height: '100%',
@@ -17,11 +16,16 @@ export const Navmenu = style({
 });
 
 export const Navlink = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: '14px'
+    }
+  },
   marginTop: '100px',
   display: 'flex',
   padding: '10px',
   backgroundColor: '#000',
-  fontSize: '14px',
+  fontSize: '10px',
   cursor: 'pointer',
   justifyContent: 'center',
   borderRadius: '5px',
@@ -34,11 +38,16 @@ export const Navlink = style({
 });
 
 export const ActiveNavlink = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: '14px'
+    }
+  },
   marginTop: '100px',
   display: 'flex',
   padding: '10px',
   backgroundColor: '#1b1b1c',
-  fontSize: '14px',
+  fontSize: '10px',
   cursor: 'pointer',
   justifyContent: 'center',
   borderRadius: '5px',
