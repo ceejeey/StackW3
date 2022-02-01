@@ -7,13 +7,13 @@ export const button = style({
       fontSize: 13
     }
   },
-  fontSize: 10,
+  fontSize: 9,
   backgroundColor: '#262626',
   margin: '0 3px',
   color: '#fff',
   border: 'none',
   padding: '10px 0',
-  width: 109,
+  width: 90,
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center',

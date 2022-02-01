@@ -7,7 +7,7 @@ export const Container = style({
       height: '603px'
     }
   },
-  width: 'calc(100% - 60px)',
+  width: 'calc(100% - 70px)',
   height: '603px',
   position: 'absolute',
   margin: 'auto',
@@ -46,7 +46,7 @@ export const HeaderWrapper = style({
       width: '36%'
     }
   },
-  width: '65%',
+  width: '55%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center'
@@ -93,7 +93,7 @@ export const ActionWrapper = style({
       width: '35%'
     }
   },
-  width: '55%',
+  width: '65%',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center'
