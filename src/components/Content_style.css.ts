@@ -1,14 +1,22 @@
 import { autocompleteClasses } from '@mui/material';
-import { textTransform } from '@mui/system';
+import { minWidth, textTransform } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  padding: '40px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      height: 210,
+      width: 467,
+      padding: 40,
+      marginTop: 140
+    }
+  },
+  height: 200,
+  width: '85%',
+  padding: 30,
   borderRadius: '20px',
-  height: 210,
-  width: 467,
   backgroundColor: '#141414',
-  marginTop: '140px',
+  marginTop: 100,
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
 
   ':hover': {
@@ -26,7 +34,10 @@ export const HeaderContainer = style({
 });
 
 export const HeaderWrap = style({
-  width: '70%',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  width: '68%',
   margin: 'auto'
 });
 
@@ -38,7 +49,7 @@ export const Title = style({
 
 export const IconContainer = style({
   justifyContent: 'flex-end',
-  width: '30%',
+  width: '32%',
   alignSelf: 'center',
   cursor: 'pointer'
 });
@@ -50,8 +61,14 @@ export const IconWrap = style({
 });
 
 export const Iconbackground = style({
-  height: '40px',
-  width: '40px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      height: 40,
+      width: 40
+    }
+  },
+  height: 30,
+  width: 30,
   borderRadius: '50%',
   margin: 'auto',
   backgroundColor: '#262626',
@@ -73,8 +90,20 @@ export const IconSandBox = style({
 });
 
 export const Para = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      height: 210,
+      width: 482
+    }
+  },
+  whiteSpace: 'normal',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
   marginTop: '20px',
-  width: '482px',
+  maxWidth: '402px',
+  minWidth: '300px',
+  maxHeight: 60,
+  minHeight: 40,
   fontSize: '12px',
   color: '#A3A3A3',
   lineHeight: '21.78px',
@@ -91,15 +120,23 @@ export const Tags = style({
 });
 
 export const Tag = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '4rem',
+      padding: '5px',
+      fontSize: '9.8px'
+    }
+  },
+
   marginRight: '20px',
-  width: '4rem',
+  width: '2rem',
   border: '0.5px solid #505050',
   borderRadius: '20px',
-  padding: '5px',
+  padding: '3px',
   textAlign: 'center',
   backgroundColor: '#363638',
   color: '#FFFFFF',
-  fontSize: '9.8px',
+  fontSize: '7.8px',
   fontWeight: '400',
   cursor: 'pointer'
 });
@@ -111,13 +148,20 @@ export const ButtonsContainer = style({
 });
 
 export const button = style({
-  width: '116px',
-  height: '43px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '116px',
+      height: '43px',
+      fontSize: '12px'
+    }
+  },
+  width: '90px',
+  height: '35px',
   borderRadius: '8.78px',
   padding: '10px',
   textAlign: 'center',
   backgroundColor: '#262626',
-  fontSize: '12px',
+  fontSize: 10,
   border: 'none',
   color: '#FFFFFF',
   fontWeight: '400',

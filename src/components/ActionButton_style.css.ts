@@ -1,7 +1,13 @@
 import { style } from '@vanilla-extract/css';
 
 export const button = style({
-  fontSize: 13,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: 109,
+      fontSize: 13
+    }
+  },
+  fontSize: 10,
   backgroundColor: '#262626',
   margin: '0 3px',
   color: '#fff',
@@ -16,8 +22,14 @@ export const button = style({
 });
 
 export const Iconbackground = style({
-  height: '40px',
-  width: '40px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      height: 40,
+      width: 40
+    }
+  },
+  height: 32,
+  width: 32,
   borderRadius: '50%',
   border: 'none',
   margin: 'auto',

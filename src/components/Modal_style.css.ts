@@ -3,20 +3,30 @@ import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '603px'
+    }
+  },
   position: 'absolute',
   top: 0,
   bottom: 0,
   left: 0,
   right: 0,
   margin: 'auto',
-  width: '603px',
+  width: '90%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
 });
 
 export const ModalContainer = style({
-  width: '603px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '603px'
+    }
+  },
+  width: '90%',
   margin: 'auto',
   background: '#151515',
   backdropFilter: 'blur( 4px )',
@@ -83,7 +93,12 @@ export const Successmesaggewrapper = style({
   color: '#ccc'
 });
 export const ModalTextContainer = style({
-  width: '538px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '538px'
+    }
+  },
+  width: '90%',
   display: 'flex',
   justifyContent: 'space-evenly',
   flexDirection: 'column',
@@ -92,6 +107,14 @@ export const ModalTextContainer = style({
 });
 
 export const input = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '538px',
+      height: '30px',
+      padding: '10px'
+    }
+  },
+  width: '95%',
   height: '30px',
   padding: '10px',
   background: '#222222',
@@ -128,15 +151,25 @@ export const VisibilityContainer = style({
 });
 
 export const VisibilityWrapper = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: '13px'
+    }
+  },
   display: 'flex',
   flexDirection: 'column',
   color: '#EDEDED',
-  fontSize: '13px',
+  fontSize: '11px',
   cursor: 'pointer'
 });
 
 export const Description = style({
-  fontSize: '13px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: '13px'
+    }
+  },
+  fontSize: '11px',
   fontWeight: '300',
   color: '#444444',
   marginTop: '2px',
@@ -153,16 +186,25 @@ export const ModalinputContainer = style({
 export const ButtonContainer = style({});
 
 export const Button = style({
-  width: '140px',
-  height: '45px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '140px',
+      height: '45px',
+      padding: '10px',
+      fontSize: '12px',
+      fontWeight: '400'
+    }
+  },
+  width: '100px',
+  height: '40px',
   borderRadius: '8.65px',
   padding: '10px',
   textAlign: 'center',
   backgroundColor: '#1976D2',
-  fontSize: '12px',
+  fontSize: '10px',
   border: 'none',
   color: '#FFFFFF',
-  fontWeight: '400',
+  fontWeight: '300',
   transition: '0.5s ease-in all',
   cursor: 'pointer',
 

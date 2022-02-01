@@ -1,7 +1,13 @@
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
-  width: '873px',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '873px',
+      height: '603px'
+    }
+  },
+  width: '100%',
   height: '603px',
   position: 'absolute',
   margin: 'auto',
@@ -35,7 +41,12 @@ export const HeaderContainer = style({
 });
 
 export const HeaderWrapper = style({
-  width: '36%',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '36%'
+    }
+  },
+  width: '65%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center'
@@ -48,13 +59,20 @@ export const tag = style({
 
   selectors: {
     '&:nth-child(2n)': {
-      width: 137,
-      height: 26,
+      '@media': {
+        'screen and (min-width: 768px)': {
+          width: 137,
+          height: 26,
+          fontSize: 14
+        }
+      },
+      width: 80,
+      height: 20,
       borderRadius: 200,
       border: '1px solid #3f3f3f',
       backgroundColor: '#151515',
       color: '#3F3F3F',
-      fontSize: 14,
+      fontSize: 8,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
@@ -63,7 +81,12 @@ export const tag = style({
 });
 
 export const ActionWrapper = style({
-  width: '35%',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '35%'
+    }
+  },
+  width: '55%',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center'
@@ -73,26 +96,26 @@ export const Icon = style({
   cursor: 'pointer'
 });
 
-export const button = style({
-  fontSize: 13,
-  backgroundColor: '#262626',
-  margin: '0 3px',
-  color: '#fff',
-  border: 'none',
-  padding: '10px 0',
-  width: 109,
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'center',
-  borderRadius: '4px',
-  cursor: 'pointer',
+// export const button = style({
+//   fontSize: 13,
+//   backgroundColor: '#262626',
+//   margin: '0 3px',
+//   color: '#fff',
+//   border: 'none',
+//   padding: '10px 0',
+//   width: 109,
+//   display: 'flex',
+//   justifyContent: 'space-evenly',
+//   alignItems: 'center',
+//   borderRadius: '4px',
+//   cursor: 'pointer',
 
-  selectors: {
-    '&:nth-child(2n)': {
-      width: 134
-    }
-  }
-});
+//   selectors: {
+//     '&:nth-child(2n)': {
+//       width: 134
+//     }
+//   }
+// });
 
 export const DecsriptionContainer = style({
   width: 'calc(100% - 64px)',
@@ -100,9 +123,6 @@ export const DecsriptionContainer = style({
   backgroundColor: '#262626',
   borderRadius: '20px',
   padding: 32,
-  fontSize: 16,
-  fontWeight: 400,
-  color: '#8d8d8d',
   overflowX: 'auto',
 
   selectors: {
@@ -110,6 +130,14 @@ export const DecsriptionContainer = style({
       display: 'none'
     }
   }
+});
+
+export const Decsription = style({
+  fontSize: 16,
+  height: 200,
+  fontWeight: 400,
+  color: '#8d8d8d',
+  overflow: 'hidden'
 });
 
 export const DecsriptionHeader = style({
