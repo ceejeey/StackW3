@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as style from './Details_style.css';
-import Modal from '@mui/material/Modal';
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import useDownloadTemplate from '../hooks/useDownloadTemplate';
 
 import ModalContainer from '../components/ModalContainer';
 import ActionButton from '../components/ActionButton';
 
+import Modal from '@mui/material/Modal';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ShareIcon from '@mui/icons-material/Share';
@@ -65,9 +66,46 @@ function Details() {
     await navigator.clipboard.writeText(text);
   };
 
+  const container = {
+    show: {}
+  };
+
+  const item = {
+    hidden: {
+      x: -500,
+      opacity: 0,
+      scale: 0.2
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 0.9
+      }
+    },
+    exit: {
+      opacity: 0,
+      x: -500,
+      scale: 1,
+      transition: {
+        ease: 'easiInOut',
+        duration: 0.8
+      }
+    }
+  };
+
   return (
-    <div className={style.backgroundImage} onClick={() => navigate('/')}>
-      <div className={style.Container} onClick={(e) => e.stopPropagation()}>
+    <motion.div
+      className={style.backgroundImage}
+      onClick={() => navigate('/')}
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <motion.div className={style.Container} onClick={(e) => e.stopPropagation()} variants={item}>
         <div className={style.CancelIconWrapper}>
           <div className={style.HeaderWrapper}>
             <span className={style.tag}>react-base-ts</span>
@@ -143,8 +181,8 @@ function Details() {
           <span className={style.Tags}>husky </span>
           <span className={style.Tags}>prettier </span>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

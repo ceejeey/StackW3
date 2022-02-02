@@ -3,7 +3,6 @@ import './App.css';
 import Home from './pages/Home';
 import Success from './pages/Success';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import * as style from './App_style.css';
 
 import React from 'react';
 import Error from './pages/Error';
