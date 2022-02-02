@@ -1,5 +1,5 @@
 import { autocompleteClasses } from '@mui/material';
-import { minWidth, textTransform } from '@mui/system';
+import { display, minWidth, textTransform } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
@@ -116,38 +116,45 @@ export const Para = style({
 
 export const Action = style({
   margin: '5px',
-  marginTop: '20px'
+  marginTop: '20px',
+  display: 'flex'
 });
 
 export const Tags = style({
-  display: 'flex'
+  display: 'flex',
+  width: '70%',
+  flexWrap: 'wrap'
 });
 
 export const Tag = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '4rem',
-      padding: '5px',
-      fontSize: '9.8px'
+      maxWidth: '6rem',
+      padding: '2px 8px',
+      fontSize: '10px'
     }
   },
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '3px',
 
-  marginRight: '20px',
-  width: '2rem',
+  maxWidth: '4rem',
+  height: '20px',
   border: '0.5px solid #505050',
   borderRadius: '20px',
-  padding: '3px',
+  padding: '1px 4px',
   textAlign: 'center',
   backgroundColor: '#363638',
   color: '#FFFFFF',
-  fontSize: '7.8px',
-  fontWeight: '400',
+  fontSize: '7.3px',
+  fontWeight: '100',
   cursor: 'pointer'
 });
 
 export const ButtonsContainer = style({
   display: 'flex',
-  width: '100%',
+  width: '30%',
   justifyContent: 'flex-end'
 });
 

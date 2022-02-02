@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Card from '../components/Card';
 import AlertHandler from '../components/AlertHandler';
 import { motion } from 'framer-motion';
+import { templateList } from '../components/templateList';
 
 import { useState, useEffect } from 'react';
 
@@ -13,50 +14,6 @@ function Home() {
   const [toggleState, setToggleState] = useState(1);
 
   const [loadState, setloadState] = useState();
-  const templateList = [
-    {
-      id: 1,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-base',
-      tags: ['react']
-    },
-    {
-      id: 2,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-Base-router-Configs',
-      tags: ['emotion', 'react']
-    },
-    {
-      id: 3,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-Base-testing-library',
-      tags: ['emotion', 'react']
-    },
-    {
-      id: 4,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-base-testing-library-react-query',
-      tags: ['emotion', 'react']
-    },
-    {
-      id: 5,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-base-testing-library-apollo',
-      tags: ['emotion', 'react']
-    },
-    {
-      id: 1,
-      description:
-        "LoremIpsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      title: 'react-base',
-      tags: ['react']
-    }
-  ];
 
   const container = {
     show: {
@@ -104,6 +61,7 @@ function Home() {
         >
           {templateList.map((template) => (
             <Card
+              id={template.id}
               variants={item}
               description={template.description}
               title={template.title}

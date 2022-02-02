@@ -17,7 +17,7 @@ import codesandbox_icon from '../components/Assets/Sandbox.svg';
 import ActionButton from './ActionButton';
 
 function Card(props) {
-  const { description, title, tags, setAlert, variants } = props;
+  const { id, description, title, tags, setAlert, variants } = props;
   const { downloadFromAnchorHandler } = useDownloadTemplate();
 
   const [template, setTemplate] = useState('');

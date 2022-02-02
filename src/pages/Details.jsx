@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import * as style from './Details_style.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { templateList } from '../components/templateList';
 
 import useDownloadTemplate from '../hooks/useDownloadTemplate';
 
@@ -17,6 +18,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import AlertHandler from '../components/AlertHandler';
+import codesandbox_icon from '../components/Assets/Sandbox.svg';
 
 function Details() {
   const { template } = useParams();
@@ -95,7 +97,18 @@ function Details() {
       }
     }
   };
-
+  let tag = [];
+  let description = 'none';
+  {
+    templateList.map((templateData) =>
+      templateData.title === template
+        ? ((tag = templateData.dependencies), (description = templateData.description))
+        : ''
+    );
+  }
+  {
+    (' ');
+  }
   return (
     <motion.div
       className={style.backgroundImage}
@@ -128,7 +141,19 @@ function Details() {
               </IconButton>
             </Tooltip>
             <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
-
+            <div className={style.Iconbackground}>
+              <Tooltip title="Edit code In Codesandbox" placement="top-start">
+                <span
+                  className={style.IconSandBox}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+                  }}
+                >
+                  <img src={codesandbox_icon} alt="HOME" />
+                </span>
+              </Tooltip>
+            </div>
             <ActionButton
               icon={<DownloadIcon sx={{ fontSize: 16 }} />}
               dataHandler={templatetitle}
@@ -158,28 +183,13 @@ function Details() {
           </div>
         </div>
         <div className={style.DecsriptionContainer}>
-          <div className={style.Decsription}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </div>
+          <div className={style.Decsription}>{description}</div>
         </div>
-        <span className={style.DecsriptionHeader}>Dependencies (23)</span>
+        <span className={style.DecsriptionHeader}>Dependencies ({tag.length})</span>
         <div className={style.TagsContainer}>
-          <span className={style.Tags}>@types/react </span>
-          <span className={style.Tags}>@types/react-dom </span>
-          <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
-          <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
-          <span className={style.Tags}>vite </span>
-          <span className={style.Tags}>husky </span>
-          <span className={style.Tags}>prettier </span>
-          <span className={style.Tags}>@types/react </span>
-          <span className={style.Tags}>@types/react-dom </span>
-          <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
-          <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
-          <span className={style.Tags}>vite </span>
-          <span className={style.Tags}>husky </span>
-          <span className={style.Tags}>prettier </span>
+          {tag.map((tags) => (
+            <span className={style.Tags}>{tags}</span>
+          ))}
         </div>
       </motion.div>
     </motion.div>
