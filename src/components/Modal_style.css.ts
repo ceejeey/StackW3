@@ -26,8 +26,12 @@ export const ModalContainer = style({
       width: '603px'
     }
   },
+
   width: '90%',
   margin: '15% auto',
+  position: 'absolute',
+  left: 0,
+  right: 0,
   background: '#151515',
   backdropFilter: 'blur( 4px )',
   border: '1px solid #242424',
@@ -109,9 +113,7 @@ export const ModalTextContainer = style({
 export const input = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '538px',
-      height: '30px',
-      padding: '10px'
+      height: '30px'
     }
   },
   width: '95%',
