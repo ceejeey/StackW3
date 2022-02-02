@@ -3,8 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const Container = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '873px',
-      height: '603px'
+      width: '873px'
     }
   },
   width: 'calc(100% - 70px)',
@@ -59,7 +58,6 @@ export const tag = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '873px',
-      height: '603px',
       fontSize: 22
     }
   },
@@ -68,11 +66,12 @@ export const tag = style({
     '&:nth-child(2n)': {
       '@media': {
         'screen and (min-width: 768px)': {
-          width: 137,
+          width: 420,
           height: 26,
-          fontSize: 14
+          fontSize: 12
         }
       },
+      padding: '0 10px',
       width: 80,
       height: 20,
       borderRadius: 200,

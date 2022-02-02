@@ -34,6 +34,11 @@ export const HeaderContainer = style({
 });
 
 export const HeaderWrap = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '70%'
+    }
+  },
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',

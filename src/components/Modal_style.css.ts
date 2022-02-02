@@ -2,23 +2,23 @@ import { autocompleteClasses } from '@mui/material';
 import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
-export const Container = style({
-  '@media': {
-    'screen and (min-width: 768px)': {
-      width: '603px'
-    }
-  },
-  position: 'absolute',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  margin: 'auto',
-  width: '90%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-});
+// export const Container = style({
+//   '@media': {
+//     'screen and (min-width: 768px)': {
+//       width: '603px'
+//     }
+//   },
+//   position: 'absolute',
+//   top: 0,
+//   bottom: 0,
+//   left: 0,
+//   right: 0,
+//   margin: 'auto',
+//   width: '90%',
+//   display: 'flex',
+//   justifyContent: 'center',
+//   alignItems: 'center'
+// });
 
 export const ModalContainer = style({
   '@media': {
@@ -27,7 +27,7 @@ export const ModalContainer = style({
     }
   },
   width: '90%',
-  margin: 'auto',
+  margin: '15% auto',
   background: '#151515',
   backdropFilter: 'blur( 4px )',
   border: '1px solid #242424',
