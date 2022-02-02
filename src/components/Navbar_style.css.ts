@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const AppHeader = style({
   backgroundColor: '#000',
   width: '100%',
-  height: '5rem'
+  margin: '5% 0px'
 });
 
 export const Navmenu = style({
@@ -21,7 +21,7 @@ export const Navlink = style({
       fontSize: '14px'
     }
   },
-  marginTop: '100px',
+
   display: 'flex',
   padding: '10px',
   backgroundColor: '#000',
@@ -43,7 +43,6 @@ export const ActiveNavlink = style({
       fontSize: '14px'
     }
   },
-  marginTop: '100px',
   display: 'flex',
   padding: '10px',
   backgroundColor: '#1b1b1c',

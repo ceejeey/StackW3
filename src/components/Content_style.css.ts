@@ -7,8 +7,7 @@ export const Container = style({
     'screen and (min-width: 768px)': {
       height: 210,
       width: 467,
-      padding: 40,
-      marginTop: 140
+      padding: 40
     }
   },
   height: 200,
@@ -16,7 +15,7 @@ export const Container = style({
   padding: 30,
   borderRadius: '20px',
   backgroundColor: '#141414',
-  marginTop: 100,
+  margin: '20px 10px',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
 
   ':hover': {
