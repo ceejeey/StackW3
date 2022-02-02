@@ -188,7 +188,15 @@ function Details() {
         <span className={style.DecsriptionHeader}>Dependencies ({tag.length})</span>
         <div className={style.TagsContainer}>
           {tag.map((tags) => (
-            <span className={style.Tags}>{tags}</span>
+            <span
+              className={style.Tags}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(`https://www.npmjs.com/package/${tags}`, '_blank');
+              }}
+            >
+              {tags}
+            </span>
           ))}
         </div>
       </motion.div>
