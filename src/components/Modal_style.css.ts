@@ -85,15 +85,28 @@ export const HeaderContainer = style({
 });
 
 export const title = style({
-  fontSize: 16,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: 16
+    }
+  },
+  fontSize: 14,
   fontWeight: 700,
   color: '#D70F0F'
 });
 
 export const Successmesaggewrapper = style({
-  width: 370,
-  height: 32,
-  fontSize: 12,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: 370,
+      fontSize: 12,
+      height: 32
+    }
+  },
+
+  width: '90%',
+  height: 26,
+  fontSize: 8,
   fontWeight: 300,
   color: '#ccc'
 });
