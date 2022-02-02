@@ -23,12 +23,13 @@ import { style } from '@vanilla-extract/css';
 export const ModalContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '603px'
+      width: '603px',
+      margin: '15% auto'
     }
   },
 
   width: '90%',
-  margin: '15% auto',
+  margin: '40% auto',
   position: 'absolute',
   left: 0,
   right: 0,
