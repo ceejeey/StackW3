@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as style from './Details_style.css';
 import Modal from '@mui/material/Modal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import useDownloadTemplate from '../hooks/useDownloadTemplate';
 
 import ModalContainer from '../components/ModalContainer';
@@ -19,8 +20,7 @@ import AlertHandler from '../components/AlertHandler';
 function Details() {
   const { template } = useParams();
   const { downloadFromAnchorHandler } = useDownloadTemplate();
-
-  console.log(template);
+  const navigate = useNavigate();
 
   const [text, setText] = useState('');
   const [templateN, setTemplate] = useState('');
@@ -66,81 +66,83 @@ function Details() {
   };
 
   return (
-    <div className={style.Container}>
-      <div className={style.CancelIconWrapper}>
-        <div className={style.HeaderWrapper}>
-          <span className={style.tag}>react-base-ts</span>
-          <span className={style.tag}>Public Template</span>
+    <div className={style.backgroundImage} onClick={() => navigate('/')}>
+      <div className={style.Container} onClick={(e) => e.stopPropagation()}>
+        <div className={style.CancelIconWrapper}>
+          <div className={style.HeaderWrapper}>
+            <span className={style.tag}>react-base-ts</span>
+            <span className={style.tag}>Public Template</span>
+          </div>
+          <IconButton color="error" size="large">
+            <Link to={'/'}>
+              <CancelIcon className={style.CancelIcon} sx={{ fontSize: 32 }} />
+            </Link>
+          </IconButton>
         </div>
-        <IconButton color="error" size="large">
-          <Link to={'/'}>
-            <CancelIcon className={style.CancelIcon} sx={{ fontSize: 32 }} />
-          </Link>
-        </IconButton>
-      </div>
-      <div className={style.HeaderContainer}>
-        <div className={style.ActionWrapper}>
-          <Tooltip title="Share" placement="top-start">
-            <IconButton color="primary" size="large">
-              <ShareIcon
-                className={style.Icon}
-                onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
-              ></ShareIcon>
-            </IconButton>
-          </Tooltip>
-          <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
+        <div className={style.HeaderContainer}>
+          <div className={style.ActionWrapper}>
+            <Tooltip title="Share" placement="top-start">
+              <IconButton color="primary" size="large">
+                <ShareIcon
+                  className={style.Icon}
+                  onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
+                ></ShareIcon>
+              </IconButton>
+            </Tooltip>
+            <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
 
-          <ActionButton
-            icon={<DownloadIcon sx={{ fontSize: 16 }} />}
-            dataHandler={templatetitle}
-            template={template}
-            buttonName="Download"
-            button="DetailsBtn"
-            tooltipStatus="Click to Download"
-          />
+            <ActionButton
+              icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+              dataHandler={templatetitle}
+              template={template}
+              buttonName="Download"
+              button="DetailsBtn"
+              tooltipStatus="Click to Download"
+            />
 
-          <ActionButton
-            icon={<GitHubIcon sx={{ fontSize: 16 }} />}
-            dataHandler={modalOpen}
-            template={template}
-            buttonName="Clone"
-            button="DetailsBtn"
-            tooltipStatus="Clone to Your Github"
-          />
+            <ActionButton
+              icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+              dataHandler={modalOpen}
+              template={template}
+              buttonName="Clone"
+              button="DetailsBtn"
+              tooltipStatus="Clone to Your Github"
+            />
 
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <ModalContainer modal="modal" template={template} />
-          </Modal>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <ModalContainer modal="modal" template={template} />
+            </Modal>
+          </div>
         </div>
-      </div>
-      <div className={style.DecsriptionContainer}>
-        <div className={style.Decsription}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book.
+        <div className={style.DecsriptionContainer}>
+          <div className={style.Decsription}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </div>
         </div>
-      </div>
-      <span className={style.DecsriptionHeader}>Dependencies (23)</span>
-      <div className={style.TagsContainer}>
-        <span className={style.Tags}>@types/react </span>
-        <span className={style.Tags}>@types/react-dom </span>
-        <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
-        <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
-        <span className={style.Tags}>vite </span>
-        <span className={style.Tags}>husky </span>
-        <span className={style.Tags}>prettier </span>
-        <span className={style.Tags}>@types/react </span>
-        <span className={style.Tags}>@types/react-dom </span>
-        <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
-        <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
-        <span className={style.Tags}>vite </span>
-        <span className={style.Tags}>husky </span>
-        <span className={style.Tags}>prettier </span>
+        <span className={style.DecsriptionHeader}>Dependencies (23)</span>
+        <div className={style.TagsContainer}>
+          <span className={style.Tags}>@types/react </span>
+          <span className={style.Tags}>@types/react-dom </span>
+          <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
+          <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
+          <span className={style.Tags}>vite </span>
+          <span className={style.Tags}>husky </span>
+          <span className={style.Tags}>prettier </span>
+          <span className={style.Tags}>@types/react </span>
+          <span className={style.Tags}>@types/react-dom </span>
+          <span className={style.Tags}>@typescript-eslint/eslint-plugin </span>
+          <span className={style.Tags}>@vitejs/plugin-react-refresh </span>
+          <span className={style.Tags}>vite </span>
+          <span className={style.Tags}>husky </span>
+          <span className={style.Tags}>prettier </span>
+        </div>
       </div>
     </div>
   );

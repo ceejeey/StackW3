@@ -1,5 +1,18 @@
 import { style } from '@vanilla-extract/css';
 
+export const backgroundImage = style({
+  '::before': {
+    background: `url('/src/components/Assets/Background.png') center center / cover no-repeat fixed`,
+    content: '',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
+    filter: 'blur(3px)'
+  }
+});
 export const Container = style({
   '@media': {
     'screen and (min-width: 768px)': {

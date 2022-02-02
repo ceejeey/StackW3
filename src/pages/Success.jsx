@@ -13,6 +13,5 @@ export default function Success() {
       icon={<CheckCircleIcon sx={{ fontSize: 38 }} />}
       description="  The template named cors has been successfully created in your github repo"
     />
-    // </Modal>
   );
 }
