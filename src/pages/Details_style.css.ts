@@ -58,7 +58,7 @@ export const HeaderWrapper = style({
       width: '36%'
     }
   },
-  width: '55%',
+  width: '60%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center'
@@ -105,7 +105,7 @@ export const ActionWrapper = style({
       width: '20%'
     }
   },
-  width: '65%',
+  width: '41%',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center'

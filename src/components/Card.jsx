@@ -57,7 +57,7 @@ function Card(props) {
             dataHandler={codeSandBoxHandler}
             data={''}
             buttonName="codeSandBox"
-            tooltipStatus="Clone to Your Github"
+            tooltipStatus="Edit code In Codesandbox"
           />
 
           <ActionButton
