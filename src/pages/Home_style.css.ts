@@ -16,7 +16,7 @@ export const Content = style({
   display: 'none',
   justifyContent: 'space-evenly',
   flexWrap: 'wrap',
-  alignContent: 'flexstart',
+
   width: '100%'
 });
 
@@ -24,6 +24,7 @@ export const ActiveContent = style({
   margin: 'auto',
   display: 'flex',
   justifyContent: 'space-evenly',
+  alignContent: 'flex-start',
   flexWrap: 'wrap',
   width: '100%'
 });

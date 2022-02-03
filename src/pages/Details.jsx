@@ -103,8 +103,8 @@ function Details() {
   }
 
   const codeSandBoxHandler = (e) => {
-    e.preventDefault();
     window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+    e.preventDefault();
   };
   return (
     <motion.div
@@ -128,27 +128,7 @@ function Details() {
         </div>
         <div className={style.HeaderContainer}>
           <div className={style.ActionWrapper}>
-            {/* <div className={style.Iconbackground}>
-              <Tooltip title="Share" placement="top-start">
-                <IconButton size="large">
-                  <ShareIcon className={style.Icon} sx={{ fontSize: 16 }} onClick={() => ShareId()}></ShareIcon>
-                </IconButton>
-              </Tooltip>
-            </div> */}
             <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
-            {/* <div className={style.Iconbackground}>
-              <Tooltip title="Edit code In Codesandbox" placement="top-start">
-                <span
-                  className={style.IconSandBox}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
-                  }}
-                >
-                  <img src={codesandbox_icon} alt="HOME" />
-                </span>
-              </Tooltip>
-            </div> */}
             <ActionButton
               icon={<img src={codesandbox_icon} alt="HOME" />}
               dataHandler={codeSandBoxHandler}
