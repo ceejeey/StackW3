@@ -130,7 +130,6 @@ export const input = style({
       height: '30px'
     }
   },
-  width: '95%',
   height: '30px',
   padding: '10px',
   background: '#222222',

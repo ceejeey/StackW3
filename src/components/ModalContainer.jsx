@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import * as style from './Modal_style.css';
 import { useState } from 'react';
 
+import { motion } from 'framer-motion';
+
 import CancelIcon from '@mui/icons-material/Cancel';
 import InfoIcon from '@mui/icons-material/Info';
 import Tooltip from '@mui/material/Tooltip';
@@ -10,6 +12,29 @@ import Loading from './Loading';
 import OptionCard from './OptionCard';
 
 const GITHUB_CLIENT_ID = '284633ed1aa09d0f2c16';
+
+const item = {
+  hidden: {
+    opacity: 0,
+    transform: 'scale(.99)'
+  },
+  show: {
+    opacity: 1,
+    transform: 'scale(1.02)',
+    transition: {
+      transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+      duration: 0.6
+    }
+  },
+  exit: {
+    opacity: 0,
+    transform: 'scale(.99)',
+    transition: {
+      transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+      duration: 0.3
+    }
+  }
+};
 
 function ModalContainer(props) {
   const { template, modal, handlerModalClose } = props;
@@ -24,7 +49,7 @@ function ModalContainer(props) {
   };
 
   return (
-    <div className={style.Container}>
+    <motion.div className={style.Container} variants={item}>
       <div className={style.ModalContainer}>
         <div className={style.ModalHeaderContainer}>
           <span className={style.header}>{template}</span>
@@ -83,7 +108,7 @@ function ModalContainer(props) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

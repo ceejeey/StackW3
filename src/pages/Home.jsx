@@ -26,22 +26,22 @@ function Home() {
   const item = {
     hidden: {
       opacity: 0,
-      y: 500
+      y: 100
     },
     show: {
       opacity: 1,
       y: 0,
       x: 0,
       transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 1.2
+        transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+        duration: 0.8
       }
     },
     exit: {
       opacity: 0,
       y: 50,
       transition: {
-        ease: 'easiInOut',
+        transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
         duration: 0.8
       }
     }

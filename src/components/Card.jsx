@@ -1,20 +1,20 @@
-import React from 'react';
-import Button from './Button';
+import React, { useState, useEffect } from 'react';
 import * as style from './Content_style.css';
-import Tag from './Tag';
-import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+
+import Tag from './Tag';
+import ActionButton from './ActionButton';
 
 import ModalContainer from './ModalContainer';
-import DownloadIcon from '@mui/icons-material/Download';
+import Modal from '@mui/material/Modal';
 
+import DetailsButton from './DetailsButton';
+
+import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Tooltip from '@mui/material/Tooltip';
 import useDownloadTemplate from '../hooks/useDownloadTemplate';
 import codesandbox_icon from '../components/Assets/Sandbox.svg';
-import ActionButton from './ActionButton';
 
 function Card(props) {
   const { id, description, title, tags, setAlert, variants } = props;
@@ -40,6 +40,11 @@ function Card(props) {
     setOpen(true);
   };
 
+  const codeSandBoxHandler = (e) => {
+    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+    e.preventDefault();
+  };
+
   return (
     <motion.div className={style.Container} variants={variants}>
       <div className={style.HeaderContainer}>
@@ -47,48 +52,39 @@ function Card(props) {
           <span className={style.Title}>{title}</span>
         </div>
         <div className={style.IconContainer}>
-          <div className={style.IconWrap}>
-            <div className={style.Iconbackground}>
-              <Tooltip title="Edit code In Codesandbox" placement="top-start">
-                <span
-                  className={style.IconSandBox}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
-                  }}
-                >
-                  <img src={codesandbox_icon} alt="HOME" />
-                </span>
-              </Tooltip>
-            </div>
-            <ActionButton
-              icon={<GitHubIcon sx={{ fontSize: 16 }} />}
-              dataHandler={modalOpen}
-              template={title}
-              buttonName=""
-              button="CardBtn"
-              tooltipStatus="Clone to Your Github"
-            />
-            <ActionButton
-              icon={<DownloadIcon sx={{ fontSize: 16 }} />}
-              dataHandler={downloadTitleHandler}
-              template={title}
-              buttonName=""
-              button="CardBtn"
-              tooltipStatus="Click to download"
-            />
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <ModalContainer template={template} modal="modal" handlerModalClose={handleClose} />
-            </Modal>
-          </div>
+          <ActionButton
+            icon={<img src={codesandbox_icon} alt="HOME" />}
+            dataHandler={codeSandBoxHandler}
+            data={''}
+            buttonName="codeSandBox"
+            tooltipStatus="Clone to Your Github"
+          />
+
+          <ActionButton
+            icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+            dataHandler={modalOpen}
+            data={title}
+            buttonName="GitHubIcon"
+            tooltipStatus="Clone to Your Github"
+          />
+          <ActionButton
+            icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+            dataHandler={downloadTitleHandler}
+            data={title}
+            buttonName="Download"
+            tooltipStatus="Click to download"
+          />
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <ModalContainer template={template} modal="modal" handlerModalClose={handleClose} />
+          </Modal>
         </div>
       </div>
-      <div className={style.Para}>
+      <div className={style.descriptionContainer}>
         <span>{description}</span>
       </div>
       <div className={style.Action}>
@@ -98,8 +94,8 @@ function Card(props) {
           ))}
         </div>
         <div className={style.ButtonsContainer}>
-          <Link to={`/${title}`}>
-            <Button label="More Details" />
+          <Link to={`/${title}`} style={{ textDecoration: 'none' }}>
+            <DetailsButton></DetailsButton>
           </Link>
         </div>
       </div>

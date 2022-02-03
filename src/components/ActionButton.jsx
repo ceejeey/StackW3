@@ -3,17 +3,16 @@ import * as style from './ActionButton_style.css';
 import Tooltip from '@mui/material/Tooltip';
 
 function ActionButton(props) {
-  const { icon, dataHandler, template, buttonName, button, tooltipStatus } = props;
+  const { icon, dataHandler, data, buttonName, tooltipStatus } = props;
   return (
     <Tooltip title={tooltipStatus} placement="top-start">
       <button
-        className={button === 'DetailsBtn' ? style.button : style.Iconbackground}
+        className={style.Iconbackground}
         onClick={() => {
-          dataHandler(template);
+          dataHandler(data);
         }}
       >
-        {buttonName}
-        {icon}
+        {buttonName === 'codeSandBox' ? <span className={style.IconSandBox}>{icon}</span> : <>{icon}</>}
       </button>
     </Tooltip>
   );

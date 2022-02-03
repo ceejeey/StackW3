@@ -25,7 +25,7 @@ function Details() {
   const { downloadFromAnchorHandler } = useDownloadTemplate();
   const navigate = useNavigate();
 
-  const [text, setText] = useState('');
+  const [text, setText] = useState(`https://stactw3protocol.netlify.app/${template}`);
   const [templateN, setTemplate] = useState('');
   const [open, setOpen] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -33,6 +33,7 @@ function Details() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const shareUrl = `https://stactw3protocol.netlify.app/${template}`;
   useEffect(() => {
     setTemplate(template);
   }, [template]);
@@ -51,7 +52,7 @@ function Details() {
   };
 
   const ShareId = (index) => {
-    setText(index);
+    setText();
     copy();
     setAlertType('Copied!');
     successMessage();
@@ -68,29 +69,23 @@ function Details() {
     await navigator.clipboard.writeText(text);
   };
 
-  const container = {
-    show: {}
-  };
-
   const item = {
     hidden: {
-      x: -500,
       opacity: 0,
-      scale: 0.2
+      y: 100
     },
     show: {
       opacity: 1,
+      y: 0,
       x: 0,
-      scale: 1,
       transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 0.9
+        transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+        duration: 0.8
       }
     },
     exit: {
       opacity: 0,
-      x: -500,
-      scale: 1,
+      y: 50,
       transition: {
         ease: 'easiInOut',
         duration: 0.8
@@ -106,14 +101,15 @@ function Details() {
         : ''
     );
   }
-  {
-    (' ');
-  }
+
+  const codeSandBoxHandler = (e) => {
+    e.preventDefault();
+    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+  };
   return (
     <motion.div
       className={style.backgroundImage}
       onClick={() => navigate('/')}
-      variants={container}
       initial="hidden"
       animate="show"
       exit="exit"
@@ -132,16 +128,15 @@ function Details() {
         </div>
         <div className={style.HeaderContainer}>
           <div className={style.ActionWrapper}>
-            <Tooltip title="Share" placement="top-start">
-              <IconButton color="primary" size="large">
-                <ShareIcon
-                  className={style.Icon}
-                  onClick={() => ShareId(`https://stactw3protocol.netlify.app/${template}`)}
-                ></ShareIcon>
-              </IconButton>
-            </Tooltip>
+            {/* <div className={style.Iconbackground}>
+              <Tooltip title="Share" placement="top-start">
+                <IconButton size="large">
+                  <ShareIcon className={style.Icon} sx={{ fontSize: 16 }} onClick={() => ShareId()}></ShareIcon>
+                </IconButton>
+              </Tooltip>
+            </div> */}
             <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
-            <div className={style.Iconbackground}>
+            {/* <div className={style.Iconbackground}>
               <Tooltip title="Edit code In Codesandbox" placement="top-start">
                 <span
                   className={style.IconSandBox}
@@ -153,22 +148,36 @@ function Details() {
                   <img src={codesandbox_icon} alt="HOME" />
                 </span>
               </Tooltip>
-            </div>
+            </div> */}
             <ActionButton
-              icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+              icon={<img src={codesandbox_icon} alt="HOME" />}
+              dataHandler={codeSandBoxHandler}
+              data={''}
+              buttonName="codeSandBox"
+              tooltipStatus="Edit code In Codesandbox"
+            />
+
+            <ActionButton
+              icon={<ShareIcon sx={{ fontSize: 17 }} />}
+              dataHandler={ShareId}
+              data={shareUrl}
+              buttonName="Share"
+              tooltipStatus="Share"
+            />
+
+            <ActionButton
+              icon={<DownloadIcon sx={{ fontSize: 17 }} />}
               dataHandler={templatetitle}
-              template={template}
+              data={template}
               buttonName="Download"
-              button="DetailsBtn"
               tooltipStatus="Click to Download"
             />
 
             <ActionButton
-              icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+              icon={<GitHubIcon sx={{ fontSize: 17 }} />}
               dataHandler={modalOpen}
-              template={template}
-              buttonName="Clone"
-              button="DetailsBtn"
+              data={template}
+              buttonName="GitHub"
               tooltipStatus="Clone to Your Github"
             />
 
