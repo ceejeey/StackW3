@@ -125,14 +125,14 @@ export const descriptionContainer = style({
 export const Action = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      flexDirection: 'row'
+      flexDirection: 'row',
+      alignItems: 'flex-end'
     }
   },
   flexDirection: 'column',
   margin: '5px',
   marginTop: '20px',
-  display: 'flex',
-  alignItems: 'flex-end'
+  display: 'flex'
 });
 
 export const Tags = style({

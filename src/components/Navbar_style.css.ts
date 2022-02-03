@@ -7,12 +7,17 @@ export const AppHeader = style({
 });
 
 export const Navmenu = style({
-  width: '40%',
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  height: '100%',
-  alignItems: 'center',
-  margin: 'auto'
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '40%',
+      display: 'flex',
+      justifyContent: 'space-evenly',
+      height: '100%',
+      alignItems: 'center',
+      margin: 'auto'
+    }
+  },
+  display: 'none'
 });
 
 export const Navlink = style({

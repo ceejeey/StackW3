@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as style from './Navbar_style.css';
 
 function Navbar({ setToggleState, toggleState }) {
