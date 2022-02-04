@@ -5,7 +5,8 @@ export const HomeContainer = style({
     'screen and (min-width: 768px)': {
       padding: '10px'
     }
-  }
+  },
+  padding: '10px'
 });
 
 export const loadingContainer = style({

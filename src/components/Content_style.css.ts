@@ -13,6 +13,7 @@ export const Container = style({
   display: 'flex',
   flexDirection: 'column',
   width: '85%',
+  minWidth: 'calc(375 - 60px)',
   padding: 30,
   borderRadius: '20px',
   backgroundColor: '#141414',

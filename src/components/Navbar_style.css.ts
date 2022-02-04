@@ -4,14 +4,14 @@ import { style } from '@vanilla-extract/css';
 export const AppHeader = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '100%'
-      // margin: '5% 0px'
+      width: '100%',
+      margin: '5% 0px'
     }
   },
   height: '100%',
   display: 'flex',
   backgroundColor: '#000',
-  position: 'relative'
+  justifyContent: 'flex-end'
 });
 
 export const Navmenu = style({
@@ -69,26 +69,27 @@ export const dropDownMenu = style({
   width: '40%',
   display: 'flex',
   justifyContent: 'space-evenly',
+  alignContent: 'flex-end',
   flexDirection: 'column',
   height: '200px',
   alignItems: 'center',
-  margin: 'auto',
-  position: 'absolute',
-  top: 45,
-  right: 0,
-  zIndex: 3
+  marginTop: '68px',
+  position: 'fixed',
+  zIndex: 2
 });
 
 export const Navlink = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      fontSize: '14px'
+      fontSize: '14px',
+      borderRadius: '5px'
     },
     'screen and (max-width: 768px)': {
-      width: 'calc(100% - 20px)',
+      width: 'calc(100% - 25px)',
       flexGrow: 1
     }
   },
+  borderBottom: '.8px solid #262626',
   color: '#e2e2e2',
   display: 'flex',
   padding: '10px',
@@ -96,7 +97,6 @@ export const Navlink = style({
   fontSize: '12px',
   cursor: 'pointer',
   justifyContent: 'center',
-  borderRadius: '5px',
   transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
 
   ':hover': {
@@ -108,21 +108,22 @@ export const Navlink = style({
 export const ActiveNavlink = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      fontSize: '14px'
+      fontSize: '14px',
+      borderRadius: '5px'
     },
     'screen and (max-width: 768px)': {
-      width: 'calc(100% - 20px)',
+      width: 'calc(100% - 25px)',
       transform: 'scale(1)',
       backgroundColor: '#000',
       color: '#fff'
     }
   },
+  borderBottom: '.8px solid #262626',
   display: 'flex',
   padding: '12px',
   backgroundColor: '#1b1b1c',
   fontSize: '10px',
   cursor: 'pointer',
   justifyContent: 'center',
-  borderRadius: '5px',
   transform: 'scale(1.1)'
 });
