@@ -4,8 +4,8 @@ import { style } from '@vanilla-extract/css';
 export const AppHeader = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '100%',
-      margin: '5% 0px'
+      width: '100%'
+      // margin: '5% 0px'
     }
   },
   height: '100%',
