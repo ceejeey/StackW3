@@ -86,10 +86,11 @@ export const Navlink = style({
     },
     'screen and (max-width: 768px)': {
       width: 'calc(100% - 25px)',
-      flexGrow: 1
+      flexGrow: 1,
+      borderBottom: '.8px solid #262626'
     }
   },
-  borderBottom: '.8px solid #262626',
+
   color: '#e2e2e2',
   display: 'flex',
   padding: '10px',
@@ -115,10 +116,11 @@ export const ActiveNavlink = style({
       width: 'calc(100% - 25px)',
       transform: 'scale(1)',
       backgroundColor: '#000',
-      color: '#fff'
+      color: '#fff',
+      borderBottom: '.8px solid #262626'
     }
   },
-  borderBottom: '.8px solid #262626',
+
   display: 'flex',
   padding: '12px',
   backgroundColor: '#1b1b1c',

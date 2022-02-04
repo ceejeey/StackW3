@@ -143,6 +143,7 @@ export const Tags = style({
     }
   },
   display: 'flex',
+  justifyContent: 'flex-start',
   alignContent: 'flex-start',
   width: '70%',
   flexWrap: 'wrap',
@@ -161,7 +162,7 @@ export const Tag = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  margin: '3px 3px 3px 0px',
+  margin: '3px 3px 3px 0',
   maxWidth: '5rem',
   minWidth: '2rem',
   height: '20px',

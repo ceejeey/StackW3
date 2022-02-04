@@ -30,11 +30,13 @@ export const ActiveContent = style({
     'screen and (min-width: 768px)': {
       padding: '10px',
       margin: 'auto'
+      // display: 'grid',
+      // gridTemplateColumns: 'repeat(3, auto)'
     }
   },
   display: 'flex',
   justifyContent: 'space-evenly',
-  alignContent: 'flex-start',
+
   flexWrap: 'wrap',
   width: '100%',
   marginTop: '50px'
