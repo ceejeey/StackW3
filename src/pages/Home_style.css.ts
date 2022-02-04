@@ -1,7 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
 export const HomeContainer = style({
-  padding: '10px'
+  '@media': {
+    'screen and (min-width: 768px)': {
+      padding: '10px'
+    }
+  }
 });
 
 export const loadingContainer = style({
@@ -21,10 +25,16 @@ export const Content = style({
 });
 
 export const ActiveContent = style({
-  margin: 'auto',
+  '@media': {
+    'screen and (min-width: 768px)': {
+      padding: '10px',
+      margin: 'auto'
+    }
+  },
   display: 'flex',
   justifyContent: 'space-evenly',
   alignContent: 'flex-start',
   flexWrap: 'wrap',
-  width: '100%'
+  width: '100%',
+  marginTop: '50px'
 });

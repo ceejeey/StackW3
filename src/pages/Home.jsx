@@ -49,8 +49,8 @@ function Home() {
 
   return (
     <>
+      <Navbar setToggleState={setToggleState} toggleState={toggleState} />
       <div className={style.HomeContainer}>
-        <Navbar setToggleState={setToggleState} toggleState={toggleState} />
         <AlertHandler message={'Download Successful!'} alert={alert} setAlert={setAlert} />
         <motion.div
           className={toggleState === 1 ? style.ActiveContent : style.Content}
