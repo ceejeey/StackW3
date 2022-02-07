@@ -28,7 +28,7 @@ export const Logo = style({
   fontFamily: 'Heebo',
   fontSize: 18,
   fontWeight: 600,
-  color: '#A3A3A3'
+  color: '#fff'
   // display: 'none'
   // height: '100%',
   // display: 'flex',
