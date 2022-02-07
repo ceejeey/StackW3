@@ -6,12 +6,12 @@ export const ModalContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '603px',
-      margin: '15% auto'
+      margin: 'calc((100vh - 450px)/2) auto'
     }
   },
 
   width: '90%',
-  margin: '45% auto',
+  margin: 'calc((100vh - 450px)/2) auto',
   position: 'absolute',
   left: 0,
   right: 0,
