@@ -2,24 +2,6 @@ import { autocompleteClasses } from '@mui/material';
 import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
-// export const Container = style({
-//   '@media': {
-//     'screen and (min-width: 768px)': {
-//       width: '603px'
-//     }
-//   },
-//   position: 'absolute',
-//   top: 0,
-//   bottom: 0,
-//   left: 0,
-//   right: 0,
-//   margin: 'auto',
-//   width: '90%',
-//   display: 'flex',
-//   justifyContent: 'center',
-//   alignItems: 'center'
-// });
-
 export const ModalContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
@@ -29,7 +11,7 @@ export const ModalContainer = style({
   },
 
   width: '90%',
-  margin: '40% auto',
+  margin: '45% auto',
   position: 'absolute',
   left: 0,
   right: 0,

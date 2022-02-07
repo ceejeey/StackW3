@@ -6,7 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function Success() {
   const { repo } = useParams();
-  console.log(template);
+  console.log(repo);
 
   return (
     <ResponeseCard
