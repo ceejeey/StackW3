@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const HomeContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      padding: '10px'
+      // padding: '10px'
     }
   },
   padding: '10px'

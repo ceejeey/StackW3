@@ -47,8 +47,18 @@ function Home() {
     }
   };
 
+  // let tag = [];
+  // let description = 'none';
+  // {
+  //   templateList.map((templateData) =>
+  //     templateData.title === template
+  //       ? ((tag = templateData.dependencies), (description = templateData.description))
+  //       : ''
+  //   );
+  // }
   return (
     <>
+      {' '}
       <Navbar setToggleState={setToggleState} toggleState={toggleState} />
       <div className={style.HomeContainer}>
         <AlertHandler message={'Download Successful!'} alert={alert} setAlert={setAlert} />
@@ -72,24 +82,42 @@ function Home() {
             />
           ))}
         </motion.div>
+        <div className={toggleState === 2 ? style.ActiveContent : style.Content}></div>
+        <div className={toggleState === 3 ? style.ActiveContent : style.Content}></div>
 
-        {/* <div className={toggleState === 2 ? style.ActiveContent : style.Content}>
-            < {templateList.map((template) => (
-                    <Card description={template.description} title={template.title} tags={template.tags} />
-                ))}
-            </div>
+        <motion.div className={toggleState === 4 ? style.ActiveContent : style.Content}>
+          {templateList
+            .filter((template) => template.category === 'Data-fetching')
+            .map((template) => (
+              <Card
+                id={template.id}
+                variants={item}
+                description={template.description}
+                title={template.title}
+                tags={template.tags}
+                loadState={loadState}
+                setloadState={setloadState}
+                setAlert={setAlert}
+              />
+            ))}
+        </motion.div>
 
-                <div className={toggleState === 3 ? style.ActiveContent : style.Content}>
-
-                </div>
-
-                <div className={toggleState === 4 ? style.ActiveContent : style.Content}>
-
-                </div>
-
-                <div className={toggleState === 5 ? style.ActiveContent : style.Content}>
-
-                </div> */}
+        <motion.div className={toggleState === 5 ? style.ActiveContent : style.Content}>
+          {templateList
+            .filter((template) => template.category === 'Misc')
+            .map((template) => (
+              <Card
+                id={template.id}
+                variants={item}
+                description={template.description}
+                title={template.title}
+                tags={template.tags}
+                loadState={loadState}
+                setloadState={setloadState}
+                setAlert={setAlert}
+              />
+            ))}
+        </motion.div>
       </div>
     </>
   );

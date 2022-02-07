@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const backgroundImage = style({
   '::before': {
+    height: '100vh',
     background: `url('/src/components/Assets/Background.png') center center / cover no-repeat fixed`,
     content: '',
     position: 'absolute',

@@ -23,7 +23,8 @@ export const templateList = [
       'typescript',
       'vite',
       'husky'
-    ]
+    ],
+    category: 'Misc'
   },
   {
     id: 2,
@@ -50,7 +51,8 @@ export const templateList = [
       'typescript',
       'vite',
       'husky'
-    ]
+    ],
+    category: 'Misc'
   },
   {
     id: 3,
@@ -78,7 +80,8 @@ export const templateList = [
       'typescript',
       'vite',
       'husky'
-    ]
+    ],
+    category: 'Misc'
   },
   {
     id: 4,
@@ -111,7 +114,8 @@ export const templateList = [
       'typescript',
       'vite',
       'husky'
-    ]
+    ],
+    category: 'Data-fetching'
   },
   {
     id: 5,
@@ -142,6 +146,7 @@ export const templateList = [
       'typescript',
       'vite',
       'husky'
-    ]
+    ],
+    category: 'Data-fetching'
   }
 ];

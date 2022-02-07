@@ -1,11 +1,46 @@
+import { Opacity } from '@material-ui/icons';
 import zIndex from '@mui/material/styles/zIndex';
 import { style } from '@vanilla-extract/css';
+
+export const LogoContainer = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      width: '92%',
+      margin: 'auto',
+      display: 'flex',
+      alignItems: 'flex-end',
+      height: '70px'
+    }
+  },
+  display: 'none'
+});
+export const Logo = style({
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontFamily: 'Heebo',
+      fontSize: 22,
+      fontWeight: 800,
+      opacity: 1,
+      marginLeft: 0
+    }
+  },
+  marginLeft: '3%',
+  fontFamily: 'Heebo',
+  fontSize: 18,
+  fontWeight: 600,
+  color: '#A3A3A3'
+  // display: 'none'
+  // height: '100%',
+  // display: 'flex',
+  // backgroundColor: '#000',
+  // justifyContent: 'flex-end'
+});
 
 export const AppHeader = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '100%',
-      margin: '5% 0px'
+      marginBottom: '5%'
     }
   },
   height: '100%',
@@ -17,7 +52,7 @@ export const AppHeader = style({
 export const Navmenu = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '40%',
+      width: '20%',
       display: 'flex',
       justifyContent: 'space-evenly',
       height: '100%',
@@ -40,7 +75,7 @@ export const toggleBar = style({
   background: '#000',
   zIndex: 2,
   display: 'flex',
-  justifyContent: 'flex-end'
+  justifyContent: 'space-between'
 });
 
 export const MenuIcon = style({
