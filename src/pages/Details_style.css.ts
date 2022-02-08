@@ -76,7 +76,7 @@ export const tag = style({
   marginBottom: '8px',
   display: 'flex',
   justifyContent: 'flex-start',
-  color: '#fff',
+  color: '#e2e2e2',
   fontSize: 17,
   fontWeight: 500,
   '@media': {
@@ -164,6 +164,7 @@ export const DecsriptionHeader = style({
       fontWeight: 700
     }
   },
+  color: '#e2e2e2',
   fontWeight: 500,
   fontSize: 17
 });
