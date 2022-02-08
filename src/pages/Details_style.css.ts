@@ -77,7 +77,7 @@ export const tag = style({
   display: 'flex',
   justifyContent: 'flex-start',
   color: '#fff',
-  fontSize: 16,
+  fontSize: 17,
   fontWeight: 500,
   '@media': {
     'screen and (min-width: 768px)': {
@@ -145,7 +145,7 @@ export const Decsription = style({
   width: '100%',
   height: '100%',
 
-  fontSize: 16,
+  fontSize: 15,
   fontWeight: 400,
   overflowX: 'auto',
   resize: 'none',
@@ -158,7 +158,14 @@ export const Decsription = style({
 });
 
 export const DecsriptionHeader = style({
-  fontWeight: 700
+  '@media': {
+    'screen and (min-width: 768px)': {
+      fontSize: 24,
+      fontWeight: 700
+    }
+  },
+  fontWeight: 500,
+  fontSize: 17
 });
 
 export const TagsContainer = style({
