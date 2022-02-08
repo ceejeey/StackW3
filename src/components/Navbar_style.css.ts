@@ -106,7 +106,6 @@ export const dropDownMenu = style({
   justifyContent: 'space-evenly',
   alignContent: 'flex-end',
   flexDirection: 'column',
-  height: '200px',
   alignItems: 'center',
   marginTop: '68px',
   position: 'fixed',

@@ -44,7 +44,8 @@ export const CancelIconWrapper = style({
 });
 export const CancelIcon = style({
   float: 'right',
-  color: '#262626'
+  color: '#262626',
+  marginTop: '-18px'
 });
 
 export const HeaderContainer = style({
@@ -56,23 +57,33 @@ export const HeaderContainer = style({
 export const HeaderWrapper = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '36%'
+      maxWidth: '65%',
+      // width: '33.5%',
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'flex-start'
     }
   },
+
   width: '60%',
   display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center'
+  justifyContent: 'flex-start',
+  flexDirection: 'column'
 });
 
 export const tag = style({
+  textTransform: 'capitalize',
+  marginBottom: '8px',
+  display: 'flex',
+  justifyContent: 'flex-start',
   color: '#fff',
   fontSize: 16,
   fontWeight: 500,
   '@media': {
     'screen and (min-width: 768px)': {
-      width: '873px',
-      fontSize: 22
+      fontSize: 24,
+      maxWidth: 360,
+      alignItems: 'flex-start'
     }
   },
 
@@ -80,19 +91,20 @@ export const tag = style({
     '&:nth-child(2n)': {
       '@media': {
         'screen and (min-width: 768px)': {
-          width: 420,
+          width: 140,
           height: 26,
-          fontSize: 12
+          fontSize: 12,
+          marginLeft: '25px'
         }
       },
-      padding: '0 10px',
-      width: 80,
+      padding: '0 5px',
+      width: 85,
       height: 20,
       borderRadius: 200,
       border: '1px solid #3f3f3f',
       backgroundColor: '#151515',
       color: '#3F3F3F',
-      fontSize: 8,
+      fontSize: 10,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
@@ -104,9 +116,12 @@ export const ActionWrapper = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '20%'
+    },
+    'screen and (max-width: 500px)': {
+      width: '50%'
     }
   },
-  width: '41%',
+  width: '35%',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center'

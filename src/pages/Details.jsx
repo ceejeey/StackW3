@@ -122,7 +122,7 @@ function Details() {
         <motion.div className={style.Container} onClick={(e) => e.stopPropagation()} variants={item}>
           <div className={style.CancelIconWrapper}>
             <div className={style.HeaderWrapper}>
-              <span className={style.tag}>react-base-ts</span>
+              <span className={style.tag}>{template}</span>
               <span className={style.tag}>Public Template</span>
             </div>
             <IconButton color="error" size="large">
