@@ -1,8 +1,8 @@
 import React from 'react';
-import * as style from './ActionButton_style.css';
+import * as style from './Fab_style.css';
 import Tooltip from '@mui/material/Tooltip';
 
-function ActionButton(props) {
+function Fab(props) {
   const { icon, dataHandler, data, buttonName, tooltipStatus } = props;
   return (
     <Tooltip title={tooltipStatus} placement="top-start">
@@ -18,4 +18,4 @@ function ActionButton(props) {
   );
 }
 
-export default ActionButton;
+export default Fab;

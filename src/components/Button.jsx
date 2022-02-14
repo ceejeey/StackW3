@@ -1,21 +1,23 @@
 import React from 'react';
-
+import * as style from './ModalContainar/Modal_style.css';
 import Button from '@mui/material/Button';
 import { withStyles } from '@material-ui/core/styles';
-import { textTransform } from '@mui/system';
 
-function DetailsButton() {
+function Btn(props) {
+  const { label, color, temp, dataHandler, data } = props;
   const CustomButton = withStyles({
     root: {
       fontFamily: 'DM Sans',
+      padding: 0,
       width: '100%',
       height: '100%',
       borderRadius: '8.78px',
       textAlign: 'center',
-      backgroundColor: '#262626',
+      backgroundColor: `${color}`,
+      // backgroundColor: '#262626',
       fontSize: 11,
       border: 'none',
-      color: '#e2e2e2',
+      color: '#fff!important',
       fontWeight: '300',
       cursor: 'pointer',
       textDecoration: 'none',
@@ -27,7 +29,18 @@ function DetailsButton() {
     }
   })((props) => <Button {...props} />);
 
-  return <CustomButton>More Details</CustomButton>;
+  return (
+    <CustomButton
+      varient="contained"
+      disabled={temp}
+      className={style.ButtonDisabled}
+      onClick={() => {
+        dataHandler(data);
+      }}
+    >
+      {label}
+    </CustomButton>
+  );
 }
 
-export default DetailsButton;
+export default Btn;

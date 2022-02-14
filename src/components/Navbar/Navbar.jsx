@@ -28,7 +28,7 @@ function Navbar({ setToggleState, toggleState }) {
           <MenuIcon className={toggleMenu === false ? style.MenuIcon : style.MenuIconOpen} sx={{ fontSize: 28 }} />
         </div>
         <div className={open === true ? style.dropDownMenu : style.Navmenu}>
-          <div className={toggleState === 1 ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab(1)}>
+          <div className={toggleState === 'all' ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab('all')}>
             All
           </div>
           {/* <div className={toggleState === 2 ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab(2)}>
@@ -37,10 +37,16 @@ function Navbar({ setToggleState, toggleState }) {
         <div className={toggleState === 3 ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab(3)}>
           State Managment
         </div> */}
-          <div className={toggleState === 4 ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab(4)}>
+          <div
+            className={toggleState === 'Data-fetching' ? style.ActiveNavlink : style.Navlink}
+            onClick={() => toggleTab('Data-fetching')}
+          >
             Data Fetching
           </div>
-          <div className={toggleState === 5 ? style.ActiveNavlink : style.Navlink} onClick={() => toggleTab(5)}>
+          <div
+            className={toggleState === 'Misc' ? style.ActiveNavlink : style.Navlink}
+            onClick={() => toggleTab('Misc')}
+          >
             Misc
           </div>
         </div>

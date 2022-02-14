@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import LottieLoading from './Assets/Loading.json';
+import LottieLoading from '../Assets/Loading.json';
 import * as style from './Modal_style.css';
 
 function Loading() {

@@ -1,5 +1,3 @@
-import { autocompleteClasses } from '@mui/material';
-import { display, height, minWidth, textTransform } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const Container = style({
@@ -179,9 +177,6 @@ export const Tag = style({
 export const ButtonsContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
-      // display: 'flex',
-      // justifyContent: 'flex-end',
-      // alignItems: 'flex-end',
       width: 140,
       height: '45px'
     }
@@ -189,27 +184,6 @@ export const ButtonsContainer = style({
 
   height: '35px'
 });
-
-// export const button = style({
-//   '@media': {
-//     'screen and (min-width: 768px)': {
-//       width: '116px',
-//       height: '43px',
-//       fontSize: '12px'
-//     }
-//   }
-// width: '100%',
-// height: '35px',
-// borderRadius: '8.78px',
-// padding: '10px',
-// textAlign: 'center',
-// backgroundColor: '#262626',
-// fontSize: 10,
-// border: 'none',
-// color: '#FFFFFF',
-// fontWeight: '400',
-// cursor: 'pointer'
-// });
 
 export const ModalErrorHeaderContainer = style({
   margin: '0 auto',

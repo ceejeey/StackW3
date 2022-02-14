@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as style from './Modal_style.css';
 import { useState } from 'react';
 
+import Btn from '../Button';
 import { motion } from 'framer-motion';
 
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -10,8 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Loading from './Loading';
 import OptionCard from './OptionCard';
-
-const GITHUB_CLIENT_ID = '284633ed1aa09d0f2c16';
+import { GITHUB_CLIENT_ID } from '../../constants';
 
 const item = {
   hidden: {
@@ -101,9 +101,13 @@ function ModalContainer(props) {
           </div>
           <div className={style.ModalinputContainer}>
             <div className={style.ButtonContainer}>
-              <button disabled={!templateName} className={style.Button} onClick={() => onClickGithub(template)}>
-                {loading ? <Loading /> : 'Create Repo'}
-              </button>
+              <Btn
+                temp={!templateName}
+                dataHandler={onClickGithub}
+                data={template}
+                label={loading ? <Loading /> : 'Create Repo'}
+                color="#1976D2"
+              ></Btn>
             </div>
           </div>
         </div>

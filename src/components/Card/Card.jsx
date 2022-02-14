@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import * as style from './Content_style.css';
+import * as style from './Card_style.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { githubConfig, codeSandBoxConfig } from '../../constants';
 
 import Tag from './Tag';
-import ActionButton from './ActionButton';
+import Fab from '../Fab/Fab';
 
-import ModalContainer from './ModalContainer';
+import ModalContainer from '../ModalContainar/ModalContainer';
 import Modal from '@mui/material/Modal';
 
-import DetailsButton from './DetailsButton';
+import Btn from '../Button';
 
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import useDownloadTemplate from '../hooks/useDownloadTemplate';
-import codesandbox_icon from '../components/Assets/Sandbox.svg';
+import useDownloadTemplate from '../../hooks/useDownloadTemplate';
+import codesandbox_icon from '../Assets/Sandbox.svg';
 
 function Card(props) {
   const { id, description, title, tags, setAlert, variants } = props;
@@ -30,7 +31,7 @@ function Card(props) {
 
   const downloadTitleHandler = (value) => {
     setTemplate(value);
-    const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
+    const url = `${githubConfig}/${template}/archive/refs/heads/main.zip`;
     downloadFromAnchorHandler(url);
     setAlert(true);
   };
@@ -41,7 +42,7 @@ function Card(props) {
   };
 
   const codeSandBoxHandler = (e) => {
-    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
+    window.open(`${codeSandBoxConfig}/${title}`, '_blank');
     e.preventDefault();
   };
 
@@ -52,7 +53,7 @@ function Card(props) {
           <span className={style.Title}>{title}</span>
         </div>
         <div className={style.IconContainer}>
-          <ActionButton
+          <Fab
             icon={<img src={codesandbox_icon} alt="HOME" />}
             dataHandler={codeSandBoxHandler}
             data={''}
@@ -60,15 +61,15 @@ function Card(props) {
             tooltipStatus="Edit code In Codesandbox"
           />
 
-          <ActionButton
-            icon={<GitHubIcon sx={{ fontSize: 16 }} />}
+          <Fab
+            icon={<GitHubIcon sx={{ fontSize: 17 }} />}
             dataHandler={modalOpen}
             data={title}
             buttonName="GitHubIcon"
             tooltipStatus="Clone to Your Github"
           />
-          <ActionButton
-            icon={<DownloadIcon sx={{ fontSize: 16 }} />}
+          <Fab
+            icon={<DownloadIcon sx={{ fontSize: 17 }} />}
             dataHandler={downloadTitleHandler}
             data={title}
             buttonName="Download"
@@ -95,7 +96,7 @@ function Card(props) {
         </div>
         <div className={style.ButtonsContainer}>
           <Link to={`/${title}`} style={{ textDecoration: 'none' }}>
-            <DetailsButton></DetailsButton>
+            <Btn label="More details" color="#262626"></Btn>
           </Link>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 
-import ModalContainer from '../components/ModalContainer';
+import ModalContainer from '../components/ModalContainar/ModalContainer';
 
 function Error() {
   const { template } = useParams();

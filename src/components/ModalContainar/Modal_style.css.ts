@@ -1,5 +1,3 @@
-import { autocompleteClasses } from '@mui/material';
-import { display } from '@mui/system';
 import { style } from '@vanilla-extract/css';
 
 export const ModalContainer = style({
@@ -180,9 +178,7 @@ export const ModalinputContainer = style({
   marginTop: '25px'
 });
 
-export const ButtonContainer = style({});
-
-export const Button = style({
+export const ButtonContainer = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '140px',
@@ -195,23 +191,22 @@ export const Button = style({
   width: '100px',
   height: '40px',
   borderRadius: '8.65px',
-  padding: '10px',
   textAlign: 'center',
-  backgroundColor: '#1976D2',
   fontSize: '10px',
   border: 'none',
-  color: '#FFFFFF',
   fontWeight: '300',
   transition: '0.5s ease-in all',
-  cursor: 'pointer',
+  cursor: 'pointer'
+});
 
+export const ButtonDisabled = style({
   ':disabled': {
-    backgroundColor: '#262626'
+    backgroundColor: '#262626',
+    color: '#fff'
   }
 });
 
 export const LoadingContainer = style({
-  marginBottom: '50px',
   width: '100%',
   height: '100%'
 });

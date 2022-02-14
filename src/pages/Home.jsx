@@ -1,29 +1,26 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Card from '../components/Card';
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar/Navbar';
+import Card from '../components/Card/Card';
 import AlertHandler from '../components/AlertHandler';
 import { motion } from 'framer-motion';
 import { templateList } from '../components/templateList';
-
-import { useState, useEffect } from 'react';
 
 import * as style from './Home_style.css';
 
 function Home() {
   const [alert, setAlert] = useState(false);
-  const [toggleState, setToggleState] = useState(1);
-
+  const [toggleState, setToggleState] = useState('all');
   const [loadState, setloadState] = useState();
+  const [content, setContent] = useState(templateList);
 
-  const container = {
+  const containerAnimation = {
     show: {
       transition: {
         staggerChildren: 0.15
       }
     }
   };
-
-  const item = {
+  const cardAnimation = {
     hidden: {
       opacity: 0,
       y: 100
@@ -47,32 +44,30 @@ function Home() {
     }
   };
 
-  // let tag = [];
-  // let description = 'none';
-  // {
-  //   templateList.map((templateData) =>
-  //     templateData.title === template
-  //       ? ((tag = templateData.dependencies), (description = templateData.description))
-  //       : ''
-  //   );
-  // }
+  useEffect(() => {
+    if (toggleState === 'all') {
+      setContent(templateList);
+    } else {
+      const filteredCategoryArr = templateList.filter((template) => template.category === toggleState);
+      setContent(filteredCategoryArr);
+    }
+  }, [toggleState]);
+
   return (
     <>
-      {' '}
       <Navbar setToggleState={setToggleState} toggleState={toggleState} />
       <div className={style.HomeContainer}>
-        <AlertHandler message={'Download Successful!'} alert={alert} setAlert={setAlert} />
         <motion.div
-          className={toggleState === 1 ? style.ActiveContent : style.Content}
-          variants={container}
+          variants={containerAnimation}
           initial="hidden"
           animate="show"
           exit="exit"
+          className={toggleState === toggleState ? style.ActiveContent : style.Content}
         >
-          {templateList.map((template) => (
+          {content.map((template) => (
             <Card
               id={template.id}
-              variants={item}
+              variants={cardAnimation}
               description={template.description}
               title={template.title}
               tags={template.tags}
@@ -82,42 +77,7 @@ function Home() {
             />
           ))}
         </motion.div>
-        <div className={toggleState === 2 ? style.ActiveContent : style.Content}></div>
-        <div className={toggleState === 3 ? style.ActiveContent : style.Content}></div>
-
-        <motion.div className={toggleState === 4 ? style.ActiveContent : style.Content}>
-          {templateList
-            .filter((template) => template.category === 'Data-fetching')
-            .map((template) => (
-              <Card
-                id={template.id}
-                variants={item}
-                description={template.description}
-                title={template.title}
-                tags={template.tags}
-                loadState={loadState}
-                setloadState={setloadState}
-                setAlert={setAlert}
-              />
-            ))}
-        </motion.div>
-
-        <motion.div className={toggleState === 5 ? style.ActiveContent : style.Content}>
-          {templateList
-            .filter((template) => template.category === 'Misc')
-            .map((template) => (
-              <Card
-                id={template.id}
-                variants={item}
-                description={template.description}
-                title={template.title}
-                tags={template.tags}
-                loadState={loadState}
-                setloadState={setloadState}
-                setAlert={setAlert}
-              />
-            ))}
-        </motion.div>
+        <AlertHandler message={'Download Successful!'} alert={alert} setAlert={setAlert} />
       </div>
     </>
   );

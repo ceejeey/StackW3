@@ -6,16 +6,16 @@ import { motion } from 'framer-motion';
 import { templateList } from '../components/templateList';
 
 import useDownloadTemplate from '../hooks/useDownloadTemplate';
+import { githubConfig, codeSandBoxConfig } from '../constants';
 
-import ModalContainer from '../components/ModalContainer';
-import ActionButton from '../components/ActionButton';
+import ModalContainer from '../components/ModalContainar/ModalContainer';
+import Fab from '../components/Fab/Fab';
 
 import Modal from '@mui/material/Modal';
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ShareIcon from '@mui/icons-material/Share';
 import CancelIcon from '@mui/icons-material/Cancel';
-import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import AlertHandler from '../components/AlertHandler';
 import codesandbox_icon from '../components/Assets/Sandbox.svg';
@@ -25,34 +25,39 @@ function Details() {
   const { downloadFromAnchorHandler } = useDownloadTemplate();
   const navigate = useNavigate();
 
-  const [text, setText] = useState(`https://stactw3protocol.netlify.app/${template}`);
-  const [templateN, setTemplate] = useState('');
+  const [text, setText] = useState(window.location.href);
+  // const [templateN, setTemplate] = useState('');
   const [open, setOpen] = useState(false);
   const [alert, setAlert] = useState(false);
   const [alertType, setAlertType] = useState('');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const shareUrl = `https://stactw3protocol.netlify.app/${template}`;
-  useEffect(() => {
-    setTemplate(template);
-  }, [template]);
+  const shareUrl = window.location.href;
+  // useEffect(() => {
+  //   setTemplate(template);
+  // }, [template]);
 
   const templatetitle = (index) => {
-    setTemplate(index);
-    const url = `https://github.com/ceejeey/${template}/archive/refs/heads/main.zip`;
+    // setTemplate(index);
+    const url = `${githubConfig}/${template}/archive/refs/heads/main.zip`;
     downloadFromAnchorHandler(url);
     setAlertType('Download Successful!');
     successMessage();
   };
 
-  const modalOpen = (index) => {
-    setTemplate(index);
+  const codeSandBoxHandler = (e) => {
+    window.open(`${codeSandBoxConfig}/${title}`, '_blank');
+    e.preventDefault();
+  };
+
+  const modalOpen = () => {
+    // setTemplate(index);
     handleOpen();
   };
 
-  const ShareId = (index) => {
-    setText();
+  const ShareId = () => {
+    setText(shareUrl);
     copy();
     setAlertType('Copied!');
     successMessage();
@@ -72,12 +77,11 @@ function Details() {
   const item = {
     hidden: {
       opacity: 0,
-      y: 100
+      transform: 'scale(.99)'
     },
     show: {
       opacity: 1,
-      y: 0,
-      x: 0,
+      transform: 'scale(1.02)',
       transition: {
         transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
         duration: 0.6
@@ -85,10 +89,10 @@ function Details() {
     },
     exit: {
       opacity: 0,
-      y: 50,
+      transform: 'scale(.99)',
       transition: {
-        ease: 'easiInOut',
-        duration: 0.6
+        transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
+        duration: 0.3
       }
     }
   };
@@ -102,19 +106,15 @@ function Details() {
     );
   }
 
-  const codeSandBoxHandler = (e) => {
-    window.open(`https://githubbox.com/ceejeey/${title}`, '_blank');
-    e.preventDefault();
-  };
   return (
     <>
       <motion.div
         className={style.backgroundImage}
         onClick={() => navigate('/')}
         animate={{
-          scale: 1.03,
+          scale: 0.95,
           transition: {
-            duration: 1
+            duration: 0.5
           }
         }}
       ></motion.div>
@@ -133,8 +133,7 @@ function Details() {
           </div>
           <div className={style.HeaderContainer}>
             <div className={style.ActionWrapper}>
-              <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
-              <ActionButton
+              <Fab
                 icon={<img src={codesandbox_icon} alt="HOME" />}
                 dataHandler={codeSandBoxHandler}
                 data={''}
@@ -142,7 +141,7 @@ function Details() {
                 tooltipStatus="Edit code In Codesandbox"
               />
 
-              <ActionButton
+              <Fab
                 icon={<ShareIcon sx={{ fontSize: 17 }} />}
                 dataHandler={ShareId}
                 data={shareUrl}
@@ -150,7 +149,7 @@ function Details() {
                 tooltipStatus="Share"
               />
 
-              <ActionButton
+              <Fab
                 icon={<DownloadIcon sx={{ fontSize: 17 }} />}
                 dataHandler={templatetitle}
                 data={template}
@@ -158,7 +157,7 @@ function Details() {
                 tooltipStatus="Click to Download"
               />
 
-              <ActionButton
+              <Fab
                 icon={<GitHubIcon sx={{ fontSize: 17 }} />}
                 dataHandler={modalOpen}
                 data={template}
@@ -195,6 +194,7 @@ function Details() {
           </div>
         </motion.div>
       </motion.div>
+      <AlertHandler message={alertType} alert={alert} setAlert={setAlert} />
     </>
   );
 }

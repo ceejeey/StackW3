@@ -1,6 +1,6 @@
 import React from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
-import ResponeseCard from '../components/ResponeseCard';
+import ResponeseCard from '../components/ResponseCard/ResponeseCard';
 
 function AuthenticationFailed() {
   return (

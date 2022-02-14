@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import ResponeseCard from '../components/ResponeseCard';
+import ResponeseCard from '../components/ResponseCard/ResponeseCard';
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
