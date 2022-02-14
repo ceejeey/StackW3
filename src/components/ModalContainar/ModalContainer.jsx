@@ -44,7 +44,7 @@ function ModalContainer(props) {
 
   const onClickGithub = (index) => {
     setLoading(true);
-    const gitHubRedirectURL = `https://nowwgo6dd6.execute-api.us-west-2.amazonaws.com/prod/github?data=${template},${templateName},${visibility},repo`;
+    const gitHubRedirectURL = `https://v1qpe5dll4.execute-api.us-east-1.amazonaws.com/prod/github?data=${template},${templateName},${visibility},repo`;
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=repo`;
   };
 
