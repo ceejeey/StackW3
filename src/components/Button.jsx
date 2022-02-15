@@ -24,7 +24,7 @@ function Btn(props) {
       textTransform: 'none',
       transition: 'all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s',
       '&:hover': {
-        background: '#262626'
+        background: `${color}`
       }
     }
   })((props) => <Button {...props} />);

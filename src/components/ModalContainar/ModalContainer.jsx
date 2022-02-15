@@ -11,7 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Loading from './Loading';
 import OptionCard from './OptionCard';
-import { GITHUB_CLIENT_ID } from '../../constants';
+import { GITHUB_CLIENT_ID, BackendApi } from '../../constants';
 
 const item = {
   hidden: {
@@ -44,7 +44,7 @@ function ModalContainer(props) {
 
   const onClickGithub = (index) => {
     setLoading(true);
-    const gitHubRedirectURL = `https://v1qpe5dll4.execute-api.us-east-1.amazonaws.com/prod/github?data=${template},${templateName},${visibility},repo`;
+    const gitHubRedirectURL = `${BackendApi}github?data=${template},${templateName},${visibility},repo`;
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${gitHubRedirectURL}&scope=repo`;
   };
 
@@ -73,7 +73,7 @@ function ModalContainer(props) {
             id="fname"
             name="fname"
             onChange={(e) => setTemplateName(e.target.value)}
-            placeholder="Enter the template name"
+            placeholder="What is your new repo name?"
           ></input>
           <div className={style.Tooltip}>
             <Tooltip title="This will be your github repositaory name">
